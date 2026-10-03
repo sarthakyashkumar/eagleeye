@@ -1,0 +1,18 @@
+# ==============================================================================
+# THE EAGLEEYE CTF :: ROBOTS POLICY
+# ==============================================================================
+User-agent: *
+Disallow: /admin
+Disallow: /flag.txt
+Disallow: /root/vault/
+Disallow: /secret-keys/
+
+# [HINT FOR SECURITY RESEARCHERS]:
+# You are searching in the right direction, web crawler!
+# But the true flag is not stored in plain text files.
+# Have you inspected the root HTML DOM comments?
+# Decode Base64 -> ROT13 -> flag format: EagleEye{...}
+# Submit flags inside the interactive terminal modal (` or ~ key).
+#
+# Event Contact: aakash.2024ug1075@iiitranchi.ac.in
+# Hosted by Indian Institute of Information Technology Ranchi
