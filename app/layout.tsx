@@ -48,7 +48,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#05070a",
+  themeColor: "#080604",
   colorScheme: "dark",
   width: "device-width",
   initialScale: 1,
@@ -80,7 +80,7 @@ export default function RootLayout({
         */}
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
       </head>
-      <body className="bg-[#05070a] text-slate-100 antialiased font-sans min-h-screen selection:bg-cyan-500/30 selection:text-cyan-200 noise-bg">
+      <body className="bg-[#080604] text-slate-100 antialiased font-sans min-h-screen selection:bg-orange-500/30 selection:text-orange-200 noise-bg">
         <EasterEggProvider>
           <SmoothScroll>
             <ScrollProgressBar />

@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { Terminal, ShieldAlert, ArrowLeft, RefreshCw } from "lucide-react";
+import { Terminal, ShieldAlert, ArrowLeft } from "lucide-react";
 import { playCyberTone } from "@/lib/utils";
 
 export default function NotFound() {
@@ -34,9 +34,9 @@ export default function NotFound() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#05070a] text-slate-100 font-mono flex flex-col items-center justify-center p-4 relative overflow-hidden select-none">
+    <div className="min-h-screen bg-[#080604] text-slate-100 font-mono flex flex-col items-center justify-center p-4 relative overflow-hidden select-none">
       {/* Background Cyber Grid */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#22d3ee08_1px,transparent_1px),linear-gradient(to_bottom,#22d3ee08_1px,transparent_1px)] bg-[size:32px_32px] pointer-events-none" />
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#f973160a_1px,transparent_1px),linear-gradient(to_bottom,#f973160a_1px,transparent_1px)] bg-[size:32px_32px] pointer-events-none" />
       <div className="absolute w-[500px] h-[500px] rounded-full bg-rose-500/5 blur-[120px] pointer-events-none" />
 
       <div className="relative z-10 w-full max-w-2xl bg-slate-950/90 border border-rose-500/40 rounded-2xl p-6 sm:p-8 backdrop-blur-md shadow-[0_0_50px_rgba(244,63,94,0.15)]">
@@ -69,7 +69,7 @@ export default function NotFound() {
 
         {/* Traceroute Output Box */}
         <div className="bg-black/70 border border-rose-950/60 rounded-xl p-4 text-[11px] sm:text-xs leading-relaxed space-y-1.5 min-h-[180px] max-h-[240px] overflow-y-auto mb-6">
-          <div className="text-cyan-400 flex items-center gap-2">
+          <div className="text-orange-400 flex items-center gap-2">
             <Terminal className="w-3.5 h-3.5" />
             <span>root@eagleeye-gateway:~# traceroute -m 6 target-host</span>
           </div>
@@ -94,7 +94,7 @@ export default function NotFound() {
           <Link
             href="/"
             onClick={() => playCyberTone("beep")}
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-mono font-bold text-xs uppercase tracking-wider transition-all shadow-[0_0_20px_rgba(34,211,238,0.3)]"
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-orange-500 hover:bg-orange-400 text-slate-950 font-mono font-bold text-xs uppercase tracking-wider transition-all shadow-[0_0_20px_rgba(249,115,22,0.3)]"
           >
             <ArrowLeft className="w-4 h-4" />
             <span>Return to Mission Control</span>

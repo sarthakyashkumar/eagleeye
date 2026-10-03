@@ -20,9 +20,9 @@ import {
 function TrackMicroAnimation({ trackId, isHovered }: { trackId: string; isHovered: boolean }) {
   if (trackId === "web") {
     return (
-      <div className="mt-4 p-3 rounded-lg bg-black/60 border border-cyan-500/20 font-mono text-[11px] leading-tight space-y-1 overflow-hidden">
+      <div className="mt-4 p-3 rounded-lg bg-black/60 border border-orange-500/20 font-mono text-[11px] leading-tight space-y-1 overflow-hidden">
         <div className="flex items-center justify-between text-slate-400">
-          <span className="text-cyan-400">HTTP/2 POST /api/admin</span>
+          <span className="text-orange-400">HTTP/2 POST /api/admin</span>
           <span className={isHovered ? "text-emerald-400 font-bold" : "text-amber-400"}>
             {isHovered ? "200 [PWNED]" : "403 [DENIED]"}
           </span>
@@ -36,8 +36,8 @@ function TrackMicroAnimation({ trackId, isHovered }: { trackId: string; isHovere
 
   if (trackId === "crypto") {
     return (
-      <div className="mt-4 p-3 rounded-lg bg-black/60 border border-violet-500/20 font-mono text-[11px] space-y-1">
-        <div className="text-violet-400 text-[10px] uppercase tracking-wider flex justify-between">
+      <div className="mt-4 p-3 rounded-lg bg-black/60 border border-amber-500/20 font-mono text-[11px] space-y-1">
+        <div className="text-amber-400 text-[10px] uppercase tracking-wider flex justify-between">
           <span>RSA-4096 / ECC Attack</span>
           <span className="text-slate-400">e=65537</span>
         </div>
@@ -52,20 +52,20 @@ function TrackMicroAnimation({ trackId, isHovered }: { trackId: string; isHovere
 
   if (trackId === "forensics") {
     return (
-      <div className="mt-4 p-2.5 rounded-lg bg-black/60 border border-cyan-500/20 font-mono text-[10px] space-y-0.5 select-none">
-        <div className="text-cyan-400/80 flex justify-between text-[9px]">
+      <div className="mt-4 p-2.5 rounded-lg bg-black/60 border border-orange-500/20 font-mono text-[10px] space-y-0.5 select-none">
+        <div className="text-orange-400/80 flex justify-between text-[9px]">
           <span>OFFSET: 0x0040</span>
           <span>PCAP / DUMP</span>
         </div>
         <div className="text-slate-300 flex justify-between tracking-wider">
-          <span className="text-cyan-300">89 50 4E 47</span>
+          <span className="text-orange-300">89 50 4E 47</span>
           <span>0D 0A 1A 0A</span>
           <span className="text-emerald-400">.PNG</span>
         </div>
         <div className="text-slate-400 flex justify-between tracking-wider">
-          <span className="text-cyan-300">45 61 67 6C</span>
+          <span className="text-orange-300">45 61 67 6C</span>
           <span>65 45 79 65</span>
-          <span className="text-cyan-400">EagleEye</span>
+          <span className="text-orange-400">EagleEye</span>
         </div>
       </div>
     );
@@ -73,8 +73,8 @@ function TrackMicroAnimation({ trackId, isHovered }: { trackId: string; isHovere
 
   if (trackId === "reverse") {
     return (
-      <div className="mt-4 p-3 rounded-lg bg-black/60 border border-cyan-500/20 font-mono text-[11px] space-y-1 text-slate-300">
-        <div className="text-[10px] text-cyan-400 uppercase tracking-wider flex justify-between">
+      <div className="mt-4 p-3 rounded-lg bg-black/60 border border-orange-500/20 font-mono text-[11px] space-y-1 text-slate-300">
+        <div className="text-[10px] text-orange-400 uppercase tracking-wider flex justify-between">
           <span>x86_64 Disassembly</span>
           <span>Ghidra / IDA</span>
         </div>
@@ -90,8 +90,8 @@ function TrackMicroAnimation({ trackId, isHovered }: { trackId: string; isHovere
 
   if (trackId === "boot2root") {
     return (
-      <div className="mt-4 p-3 rounded-lg bg-black/60 border border-emerald-500/20 font-mono text-[11px] space-y-1">
-        <div className="text-emerald-400 text-[10px] uppercase tracking-wider flex justify-between">
+      <div className="mt-4 p-3 rounded-lg bg-black/60 border border-amber-500/20 font-mono text-[11px] space-y-1">
+        <div className="text-amber-400 text-[10px] uppercase tracking-wider flex justify-between">
           <span>Linux PrivEsc</span>
           <span>Kernel 6.1</span>
         </div>
@@ -107,16 +107,16 @@ function TrackMicroAnimation({ trackId, isHovered }: { trackId: string; isHovere
 
   if (trackId === "osint") {
     return (
-      <div className="mt-4 p-3 rounded-lg bg-black/60 border border-cyan-500/20 font-mono text-[10px] flex items-center justify-between">
+      <div className="mt-4 p-3 rounded-lg bg-black/60 border border-orange-500/20 font-mono text-[10px] flex items-center justify-between">
         <div className="space-y-0.5">
-          <div className="text-cyan-400 uppercase tracking-wider">GEOINT Target</div>
+          <div className="text-orange-400 uppercase tracking-wider">GEOINT Target</div>
           <div className="text-slate-300">23.3441° N, 85.3096° E</div>
           <div className="text-[9px] text-slate-400">IIIT Ranchi Campus Node</div>
         </div>
         {/* Animated mini radar */}
-        <div className="relative w-8 h-8 rounded-full border border-cyan-500/40 flex items-center justify-center overflow-hidden">
-          <div className="absolute inset-0 border-t-2 border-cyan-400 animate-spin" style={{ animationDuration: "3s" }} />
-          <div className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-ping" />
+        <div className="relative w-8 h-8 rounded-full border border-orange-500/40 flex items-center justify-center overflow-hidden">
+          <div className="absolute inset-0 border-t-2 border-orange-400 animate-spin" style={{ animationDuration: "3s" }} />
+          <div className="w-1.5 h-1.5 rounded-full bg-orange-400 animate-ping" />
         </div>
       </div>
     );
@@ -124,8 +124,8 @@ function TrackMicroAnimation({ trackId, isHovered }: { trackId: string; isHovere
 
   if (trackId === "misc") {
     return (
-      <div className="mt-4 p-3 rounded-lg bg-black/60 border border-purple-500/20 font-mono text-[10px] space-y-1">
-        <div className="text-purple-400 uppercase tracking-wider flex justify-between">
+      <div className="mt-4 p-3 rounded-lg bg-black/60 border border-orange-500/20 font-mono text-[10px] space-y-1">
+        <div className="text-orange-400 uppercase tracking-wider flex justify-between">
           <span>SDR Radio & AI Jailbreak</span>
           <span>433.92 MHz</span>
         </div>
@@ -166,7 +166,7 @@ function BentoCard({ track }: { track: TrackItem }) {
 
   const difficultyColors = {
     Beginner: "text-emerald-400 border-emerald-500/30 bg-emerald-950/20",
-    Intermediate: "text-cyan-400 border-cyan-500/30 bg-cyan-950/20",
+    Intermediate: "text-orange-400 border-orange-500/30 bg-orange-950/20",
     Hard: "text-amber-400 border-amber-500/30 bg-amber-950/20",
     Insane: "text-rose-400 border-rose-500/30 bg-rose-950/20",
   };
@@ -179,22 +179,22 @@ function BentoCard({ track }: { track: TrackItem }) {
       }}
       onMouseLeave={() => setIsHovered(false)}
       onMouseMove={handleMouseMove}
-      className={`group relative rounded-2xl border border-slate-800/80 bg-slate-950/70 p-6 backdrop-blur-md overflow-hidden transition-all duration-300 hover:border-cyan-500/50 hover:shadow-[0_0_30px_rgba(34,211,238,0.15)] flex flex-col justify-between ${
+      className={`group relative rounded-2xl border border-slate-800/80 bg-slate-950/70 p-6 backdrop-blur-md overflow-hidden transition-all duration-300 hover:border-orange-500/50 hover:shadow-[0_0_30px_rgba(249,115,22,0.18)] flex flex-col justify-between ${
         track.colSpan || ""
       }`}
     >
-      {/* Dynamic Cursor Spotlight Effect */}
+      {/* Dynamic Cursor Spotlight Effect in Cyber Orange */}
       <div
         className="pointer-events-none absolute -inset-px opacity-0 group-hover:opacity-100 transition-opacity duration-300"
         style={{
-          background: `radial-gradient(400px circle at ${mousePos.x}px ${mousePos.y}px, rgba(34, 211, 238, 0.08), transparent 70%)`,
+          background: `radial-gradient(400px circle at ${mousePos.x}px ${mousePos.y}px, rgba(249, 115, 22, 0.09), transparent 70%)`,
         }}
       />
 
       {/* Top Header */}
       <div>
         <div className="flex items-center justify-between mb-4">
-          <div className="p-3 rounded-xl bg-cyan-950/40 border border-cyan-500/30 text-cyan-400 group-hover:text-cyan-300 group-hover:border-cyan-400 group-hover:shadow-[0_0_15px_rgba(34,211,238,0.3)] transition-all">
+          <div className="p-3 rounded-xl bg-orange-950/40 border border-orange-500/30 text-orange-400 group-hover:text-orange-300 group-hover:border-orange-400 group-hover:shadow-[0_0_15px_rgba(249,115,22,0.3)] transition-all">
             <IconComponent className="w-6 h-6" />
           </div>
 
@@ -214,10 +214,10 @@ function BentoCard({ track }: { track: TrackItem }) {
 
         {/* Title */}
         <div className="space-y-1">
-          <span className="text-[10px] font-mono text-cyan-400 uppercase tracking-widest">
+          <span className="text-[10px] font-mono text-orange-400 uppercase tracking-widest">
             {track.category}
           </span>
-          <h3 className="text-xl sm:text-2xl font-bold font-mono text-slate-100 group-hover:text-cyan-300 transition-colors">
+          <h3 className="text-xl sm:text-2xl font-bold font-mono text-slate-100 group-hover:text-orange-300 transition-colors">
             {track.name}
           </h3>
         </div>
@@ -238,13 +238,13 @@ export function Tracks() {
   return (
     <section id="tracks" className="relative py-24 sm:py-32 px-4 sm:px-6 lg:px-8">
       {/* Background accents */}
-      <div className="absolute top-0 inset-x-0 h-[1px] bg-gradient-to-r from-transparent via-cyan-500/20 to-transparent" />
+      <div className="absolute top-0 inset-x-0 h-[1px] bg-gradient-to-r from-transparent via-orange-500/20 to-transparent" />
 
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12">
           <div>
-            <div className="flex items-center gap-2 mb-2 text-cyan-400">
+            <div className="flex items-center gap-2 mb-2 text-orange-400">
               <Sparkles className="w-4 h-4" />
               <span className="text-xs font-mono tracking-widest uppercase">
                 // 02. COMPETITION DOMAINS

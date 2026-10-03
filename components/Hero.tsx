@@ -31,13 +31,13 @@ export function Hero() {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-950/40 border border-cyan-500/40 backdrop-blur-md shadow-[0_0_20px_rgba(34,211,238,0.2)] mb-6 select-none"
+          className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-orange-950/40 border border-orange-500/40 backdrop-blur-md shadow-[0_0_20px_rgba(249,115,22,0.2)] mb-6 select-none"
         >
           <span className="relative flex h-2 w-2">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-500"></span>
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-orange-500"></span>
           </span>
-          <span className="text-[11px] sm:text-xs font-mono font-medium tracking-wider text-cyan-300 uppercase">
+          <span className="text-[11px] sm:text-xs font-mono font-medium tracking-wider text-orange-300 uppercase">
             {EVENT_DETAILS.statusBadge}
           </span>
           <span className="text-slate-600">|</span>
@@ -48,13 +48,13 @@ export function Hero() {
 
         {/* Main Headline with Text Scramble */}
         <div className="relative my-2">
-          <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-black tracking-tight uppercase text-transparent bg-clip-text bg-gradient-to-b from-white via-slate-100 to-slate-400 drop-shadow-[0_0_35px_rgba(34,211,238,0.3)]">
+          <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-black tracking-tight uppercase text-transparent bg-clip-text bg-gradient-to-b from-white via-slate-100 to-slate-400 drop-shadow-[0_0_40px_rgba(249,115,22,0.35)]">
             <DecryptText text="The EagleEye" speed={40} delay={200} />
           </h1>
 
           {/* Glitch chromatic overlay clone on hover */}
           <div className="absolute inset-0 pointer-events-none select-none opacity-0 hover:opacity-100 transition-opacity">
-            <span className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-black tracking-tight uppercase text-cyan-400/20 blur-[1px]">
+            <span className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-black tracking-tight uppercase text-orange-500/20 blur-[1px]">
               The EagleEye
             </span>
           </div>
@@ -65,7 +65,7 @@ export function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.4, duration: 0.8 }}
-          className="flex items-center justify-center gap-3 sm:gap-4 my-3 text-sm sm:text-lg md:text-xl font-mono text-cyan-400 font-semibold tracking-widest uppercase"
+          className="flex items-center justify-center gap-3 sm:gap-4 my-3 text-sm sm:text-lg md:text-xl font-mono text-orange-400 font-semibold tracking-widest uppercase"
         >
           <span>Hack</span>
           <span className="text-slate-600">•</span>
@@ -95,7 +95,7 @@ export function Hero() {
           <a
             href="#tracks"
             onClick={() => playCyberTone("beep")}
-            className="group relative inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-mono font-bold text-xs uppercase tracking-wider transition-all duration-300 shadow-[0_0_25px_rgba(34,211,238,0.4)] hover:shadow-[0_0_35px_rgba(34,211,238,0.7)] cursor-pointer"
+            className="group relative inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-orange-500 hover:bg-orange-400 text-slate-950 font-mono font-bold text-xs uppercase tracking-wider transition-all duration-300 shadow-[0_0_25px_rgba(249,115,22,0.4)] hover:shadow-[0_0_35px_rgba(249,115,22,0.7)] cursor-pointer"
           >
             <Shield className="w-4 h-4 text-slate-950" />
             <span>Explore 5+ Tracks</span>
@@ -104,9 +104,9 @@ export function Hero() {
 
           <button
             onClick={handleOpenTerminal}
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-slate-950/80 hover:bg-slate-900 border border-cyan-500/40 hover:border-cyan-400 text-cyan-300 font-mono text-xs uppercase tracking-wider transition-all duration-300 shadow-[0_0_15px_rgba(34,211,238,0.15)] cursor-pointer"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-slate-950/80 hover:bg-slate-900 border border-orange-500/40 hover:border-orange-400 text-orange-300 font-mono text-xs uppercase tracking-wider transition-all duration-300 shadow-[0_0_15px_rgba(249,115,22,0.15)] cursor-pointer"
           >
-            <Terminal className="w-4 h-4 text-cyan-400" />
+            <Terminal className="w-4 h-4 text-orange-400" />
             <span>Spawn Shell [`]</span>
           </button>
         </motion.div>
@@ -132,8 +132,8 @@ export function Hero() {
         <span className="text-[10px] font-mono tracking-widest uppercase">
           SCROLL TO DECRYPT
         </span>
-        <a href="#about" aria-label="Scroll to about section" className="p-1 hover:text-cyan-400 transition-colors">
-          <ChevronDown className="w-4 h-4 animate-bounce text-cyan-400" />
+        <a href="#about" aria-label="Scroll to about section" className="p-1 hover:text-orange-400 transition-colors">
+          <ChevronDown className="w-4 h-4 animate-bounce text-orange-400" />
         </a>
       </motion.div>
     </section>

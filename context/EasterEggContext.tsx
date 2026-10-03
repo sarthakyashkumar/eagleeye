@@ -113,7 +113,7 @@ export function EasterEggProvider({ children }: { children: React.ReactNode }) {
 
     console.log(
       asciiEagle,
-      "color: #22d3ee; font-weight: bold; font-family: monospace; font-size: 11px;"
+      "color: #f97316; font-weight: bold; font-family: monospace; font-size: 11px;"
     );
     console.log(
       "%c[THE EAGLEEYE CTF :: SYSTEM LOG]\n" +
@@ -122,7 +122,7 @@ export function EasterEggProvider({ children }: { children: React.ReactNode }) {
         ">> HINT 2/3: Press the backtick (`) key or click the footer prompt to open the root terminal.\n" +
         ">> HINT 3/3: Submit decoded flags using 'submit <flag>' in the terminal.\n" +
         ">> Run whoami, help, or ls in the secret terminal to begin.",
-      "color: #00ff9c; font-weight: bold; font-size: 13px;",
+      "color: #fb923c; font-weight: bold; font-size: 13px;",
       "color: #94a3b8; font-size: 11px;"
     );
 

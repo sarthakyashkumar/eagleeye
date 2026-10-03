@@ -27,20 +27,20 @@ function ContactCard({ contact }: { contact: ContactPerson }) {
   };
 
   return (
-    <div className="group relative rounded-2xl border border-slate-800 bg-slate-950/70 p-6 backdrop-blur-md transition-all duration-300 hover:border-cyan-500/50 hover:bg-slate-900/40 hover:shadow-[0_0_30px_rgba(34,211,238,0.15)] flex flex-col justify-between">
+    <div className="group relative rounded-2xl border border-slate-800 bg-slate-950/70 p-6 backdrop-blur-md transition-all duration-300 hover:border-orange-500/50 hover:bg-slate-900/40 hover:shadow-[0_0_30px_rgba(249,115,22,0.18)] flex flex-col justify-between">
       <div>
         {/* Header */}
         <div className="flex items-center justify-between mb-4">
-          <div className="p-2.5 rounded-xl bg-cyan-950/40 border border-cyan-500/20 text-cyan-400 group-hover:text-cyan-300 group-hover:border-cyan-400 transition-colors">
+          <div className="p-2.5 rounded-xl bg-orange-950/40 border border-orange-500/20 text-orange-400 group-hover:text-orange-300 group-hover:border-orange-400 transition-colors">
             <ShieldCheck className="w-5 h-5" />
           </div>
-          <span className="text-[10px] font-mono text-cyan-400/80 bg-cyan-950/30 px-2.5 py-0.5 rounded-full border border-cyan-500/20">
+          <span className="text-[10px] font-mono text-orange-400/80 bg-orange-950/30 px-2.5 py-0.5 rounded-full border border-orange-500/20">
             {contact.role}
           </span>
         </div>
 
         {/* Name */}
-        <h3 className="text-xl font-bold font-mono text-slate-100 group-hover:text-cyan-300 transition-colors">
+        <h3 className="text-xl font-bold font-mono text-slate-100 group-hover:text-orange-300 transition-colors">
           {contact.name}
         </h3>
         <p className="text-xs text-slate-400 font-sans mt-0.5">
@@ -55,15 +55,15 @@ function ContactCard({ contact }: { contact: ContactPerson }) {
           <a
             href={`tel:${contact.phone}`}
             onClick={() => playCyberTone("beep")}
-            className="flex items-center gap-2 text-slate-300 hover:text-cyan-300 transition-colors truncate"
+            className="flex items-center gap-2 text-slate-300 hover:text-orange-300 transition-colors truncate"
             title="Click to Call"
           >
-            <Phone className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
+            <Phone className="w-3.5 h-3.5 text-orange-400 shrink-0" />
             <span className="truncate">{contact.phoneFormatted}</span>
           </a>
           <button
             onClick={() => handleCopy(contact.phone, "phone")}
-            className="p-1 text-slate-400 hover:text-cyan-300 transition-colors shrink-0"
+            className="p-1 text-slate-400 hover:text-orange-300 transition-colors shrink-0"
             title="Copy Phone Number"
             aria-label={`Copy phone for ${contact.name}`}
           >
@@ -80,15 +80,15 @@ function ContactCard({ contact }: { contact: ContactPerson }) {
           <a
             href={`mailto:${contact.email}`}
             onClick={() => playCyberTone("beep")}
-            className="flex items-center gap-2 text-slate-300 hover:text-cyan-300 transition-colors truncate"
+            className="flex items-center gap-2 text-slate-300 hover:text-orange-300 transition-colors truncate"
             title="Click to Email"
           >
-            <Mail className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
+            <Mail className="w-3.5 h-3.5 text-orange-400 shrink-0" />
             <span className="truncate">{contact.email}</span>
           </a>
           <button
             onClick={() => handleCopy(contact.email, "email")}
-            className="p-1 text-slate-400 hover:text-cyan-300 transition-colors shrink-0"
+            className="p-1 text-slate-400 hover:text-orange-300 transition-colors shrink-0"
             title="Copy Email Address"
             aria-label={`Copy email for ${contact.name}`}
           >
@@ -107,12 +107,12 @@ function ContactCard({ contact }: { contact: ContactPerson }) {
 export function Contact() {
   return (
     <section id="contact" className="relative py-24 sm:py-32 px-4 sm:px-6 lg:px-8">
-      <div className="absolute top-0 inset-x-0 h-[1px] bg-gradient-to-r from-transparent via-cyan-500/20 to-transparent" />
+      <div className="absolute top-0 inset-x-0 h-[1px] bg-gradient-to-r from-transparent via-orange-500/20 to-transparent" />
 
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 mb-3 text-cyan-400">
+          <div className="inline-flex items-center gap-2 mb-3 text-orange-400">
             <MessageSquare className="w-4 h-4" />
             <span className="text-xs font-mono tracking-widest uppercase">
               // 05. DIRECT COMMS

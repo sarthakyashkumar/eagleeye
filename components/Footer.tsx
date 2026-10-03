@@ -5,7 +5,7 @@ import { EagleEyeLogo } from "./EagleEyeLogo";
 import { NAV_LINKS } from "@/lib/config";
 import { useEasterEggs } from "@/context/EasterEggContext";
 import { playCyberTone } from "@/lib/utils";
-import { Terminal, Sparkles, ExternalLink, Heart } from "lucide-react";
+import { Terminal, Sparkles, ExternalLink } from "lucide-react";
 
 export function Footer() {
   const { unlockedEggs, totalEggs, setTerminalOpen, unlockEgg } = useEasterEggs();
@@ -17,9 +17,9 @@ export function Footer() {
   };
 
   return (
-    <footer className="relative bg-[#030508] border-t border-slate-900 pt-16 pb-12 overflow-hidden select-none">
-      {/* Ambient background glow */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[300px] bg-cyan-500/5 rounded-full blur-[140px] pointer-events-none" />
+    <footer className="relative bg-[#050302] border-t border-slate-900 pt-16 pb-12 overflow-hidden select-none">
+      {/* Ambient background warm ember glow */}
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[300px] bg-orange-500/5 rounded-full blur-[140px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Top Grid */}
@@ -31,8 +31,8 @@ export function Footer() {
               The premier national cybersecurity Capture The Flag competition organized by the
               Department of Computer Science & Engineering at IIIT Ranchi.
             </p>
-            <div className="flex items-center gap-2 text-xs font-mono text-cyan-400">
-              <span className="h-2 w-2 rounded-full bg-cyan-400 animate-ping" />
+            <div className="flex items-center gap-2 text-xs font-mono text-orange-400">
+              <span className="h-2 w-2 rounded-full bg-orange-400 animate-ping" />
               <span>Host Node: IIIT Ranchi, Jharkhand, India</span>
             </div>
           </div>
@@ -48,7 +48,7 @@ export function Footer() {
                   <a
                     href={link.href}
                     onClick={() => playCyberTone("beep")}
-                    className="text-slate-400 hover:text-cyan-400 transition-colors"
+                    className="text-slate-400 hover:text-orange-400 transition-colors"
                   >
                     &gt; {link.label}
                   </a>
@@ -68,15 +68,15 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => playCyberTone("beep")}
-                className="group inline-flex items-center gap-1.5 text-slate-400 hover:text-cyan-300 transition-colors"
+                className="group inline-flex items-center gap-1.5 text-slate-400 hover:text-orange-300 transition-colors"
               >
                 <span>Bugthrive (Security Partner)</span>
                 <ExternalLink className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
               </a>
 
               {/* Easter Eggs Counter Badge */}
-              <div className="mt-4 p-3 rounded-xl bg-slate-950/80 border border-cyan-500/30 font-mono text-xs">
-                <div className="flex items-center justify-between text-cyan-400 mb-1">
+              <div className="mt-4 p-3 rounded-xl bg-slate-950/80 border border-orange-500/30 font-mono text-xs">
+                <div className="flex items-center justify-between text-orange-400 mb-1">
                   <span className="flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-wider">
                     <Sparkles className="w-3.5 h-3.5 text-amber-400" />
                     Easter Eggs Discovered
@@ -87,7 +87,7 @@ export function Footer() {
                 </div>
                 <div className="h-1.5 w-full bg-slate-900 rounded-full overflow-hidden">
                   <div
-                    className="h-full bg-gradient-to-r from-cyan-500 to-emerald-400 transition-all duration-500"
+                    className="h-full bg-gradient-to-r from-orange-500 via-amber-400 to-yellow-400 transition-all duration-500"
                     style={{ width: `${(unlockedEggs.length / totalEggs) * 100}%` }}
                   />
                 </div>
@@ -105,7 +105,7 @@ export function Footer() {
         <div className="py-12 sm:py-16 text-center overflow-hidden">
           <h2
             onClick={handlePromptClick}
-            className="text-5xl sm:text-8xl md:text-9xl lg:text-[13rem] font-black tracking-tighter uppercase transition-all duration-500 cursor-pointer select-none text-transparent stroke-text hover:text-cyan-400 hover:drop-shadow-[0_0_60px_rgba(34,211,238,0.5)]"
+            className="text-5xl sm:text-8xl md:text-9xl lg:text-[13rem] font-black tracking-tighter uppercase transition-all duration-500 cursor-pointer select-none text-transparent stroke-text hover:text-orange-400 hover:drop-shadow-[0_0_60px_rgba(249,115,22,0.5)]"
             title="Click to spawn command prompt"
           >
             THE EAGLEEYE
@@ -122,9 +122,9 @@ export function Footer() {
           {/* Interactive footer prompt */}
           <button
             onClick={handlePromptClick}
-            className="group inline-flex items-center gap-2 px-3 py-1.5 rounded-lg hover:bg-slate-900 border border-transparent hover:border-cyan-500/30 text-slate-400 hover:text-cyan-300 transition-all cursor-pointer"
+            className="group inline-flex items-center gap-2 px-3 py-1.5 rounded-lg hover:bg-slate-900 border border-transparent hover:border-orange-500/30 text-slate-400 hover:text-orange-300 transition-all cursor-pointer"
           >
-            <Terminal className="w-3.5 h-3.5 text-cyan-400 group-hover:animate-pulse" />
+            <Terminal className="w-3.5 h-3.5 text-orange-400 group-hover:animate-pulse" />
             <span className="text-[11px]">
               // nothing to see here... or is there? [Press ~ to launch terminal]
             </span>

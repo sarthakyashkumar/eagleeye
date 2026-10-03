@@ -65,9 +65,9 @@ export function CustomCursor() {
 
   return (
     <div className="pointer-events-none fixed inset-0 z-[9999] overflow-hidden">
-      {/* Outer Trailing Ring */}
+      {/* Outer Trailing Ring in Cyber Orange */}
       <motion.div
-        className="fixed top-0 left-0 rounded-full border border-cyan-400/80 mix-blend-screen"
+        className="fixed top-0 left-0 rounded-full border border-orange-400/80 mix-blend-screen"
         style={{
           x: smoothX,
           y: smoothY,
@@ -77,15 +77,15 @@ export function CustomCursor() {
         animate={{
           width: isHovered ? 48 : 28,
           height: isHovered ? 48 : 28,
-          borderColor: isHovered ? "rgba(34, 211, 238, 1)" : "rgba(34, 211, 238, 0.5)",
-          backgroundColor: isHovered ? "rgba(34, 211, 238, 0.15)" : "transparent",
+          borderColor: isHovered ? "rgba(249, 115, 22, 1)" : "rgba(249, 115, 22, 0.5)",
+          backgroundColor: isHovered ? "rgba(249, 115, 22, 0.15)" : "transparent",
         }}
         transition={{ type: "spring", stiffness: 350, damping: 25 }}
       />
 
-      {/* Center Reticle Point */}
+      {/* Center Reticle Point in Glowing Cyber Orange */}
       <motion.div
-        className="fixed top-0 left-0 h-1.5 w-1.5 rounded-full bg-cyan-300 shadow-[0_0_8px_#22d3ee]"
+        className="fixed top-0 left-0 h-1.5 w-1.5 rounded-full bg-orange-300 shadow-[0_0_8px_#f97316]"
         style={{
           x: mouseX,
           y: mouseY,

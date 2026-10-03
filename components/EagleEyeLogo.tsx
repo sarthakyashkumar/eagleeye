@@ -79,14 +79,14 @@ export function EagleEyeLogo({ className = "", size = 36, showText = true }: Eag
       title="EagleEye: Double-click to pulse scan | 5x click to hack"
     >
       <div
-        className="relative flex items-center justify-center rounded-xl bg-cyan-950/30 p-1.5 border border-cyan-500/30 shadow-[0_0_15px_rgba(34,211,238,0.2)] group-hover:border-cyan-400 group-hover:shadow-[0_0_22px_rgba(34,211,238,0.4)] transition-all duration-300"
+        className="relative flex items-center justify-center rounded-xl bg-orange-950/30 p-1.5 border border-orange-500/30 shadow-[0_0_15px_rgba(249,115,22,0.2)] group-hover:border-orange-400 group-hover:shadow-[0_0_22px_rgba(249,115,22,0.4)] transition-all duration-300"
         style={{ width: size, height: size }}
       >
         <svg
           viewBox="0 0 48 48"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          className="w-full h-full text-cyan-400 drop-shadow-[0_0_8px_rgba(34,211,238,0.6)]"
+          className="w-full h-full text-orange-400 drop-shadow-[0_0_8px_rgba(249,115,22,0.6)]"
         >
           {/* Eagle Beak & Crest Silhouette */}
           <path
@@ -95,7 +95,7 @@ export function EagleEyeLogo({ className = "", size = 36, showText = true }: Eag
             strokeWidth="2.2"
             strokeLinecap="round"
             strokeLinejoin="round"
-            className="transition-colors group-hover:stroke-cyan-300"
+            className="transition-colors group-hover:stroke-orange-300"
           />
           {/* Eagle brow / geometric crest */}
           <path
@@ -116,7 +116,7 @@ export function EagleEyeLogo({ className = "", size = 36, showText = true }: Eag
             cx="24"
             cy="24"
             r="8"
-            stroke="#8b5cf6"
+            stroke="#f59e0b"
             strokeWidth="1.5"
             strokeDasharray="2 3"
             className="animate-spin"
@@ -129,8 +129,8 @@ export function EagleEyeLogo({ className = "", size = 36, showText = true }: Eag
               cx="24"
               cy="24"
               r="4.2"
-              fill="#22d3ee"
-              className="drop-shadow-[0_0_6px_#22d3ee]"
+              fill="#f97316"
+              className="drop-shadow-[0_0_6px_#f97316]"
             />
             <circle cx="25.2" cy="22.8" r="1.2" fill="#ffffff" />
           </g>
@@ -138,16 +138,16 @@ export function EagleEyeLogo({ className = "", size = 36, showText = true }: Eag
 
         {/* Pulsing beacon glow dot */}
         <span className="absolute -top-0.5 -right-0.5 flex h-2 w-2">
-          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
-          <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-500"></span>
+          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75"></span>
+          <span className="relative inline-flex rounded-full h-2 w-2 bg-orange-500"></span>
         </span>
       </div>
 
       {showText && (
         <div className="flex flex-col leading-none">
           <div className="flex items-center gap-1.5">
-            <span className="text-base sm:text-lg font-bold tracking-wider text-slate-100 uppercase group-hover:text-cyan-300 transition-colors">
-              The <span className="text-cyan-400">Eagle</span>Eye
+            <span className="text-base sm:text-lg font-bold tracking-wider text-slate-100 uppercase group-hover:text-orange-300 transition-colors">
+              The <span className="text-orange-400">Eagle</span>Eye
             </span>
           </div>
           <span className="text-[9px] uppercase tracking-widest text-slate-400 font-mono mt-0.5">

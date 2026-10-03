@@ -5,7 +5,7 @@ import { useEasterEggs } from "@/context/EasterEggContext";
 import { CTF_FLAG } from "@/lib/config";
 import { playCyberTone } from "@/lib/utils";
 import confetti from "canvas-confetti";
-import { Terminal, X, Minus, Square } from "lucide-react";
+import { Terminal, X } from "lucide-react";
 
 interface TerminalLine {
   id: string;
@@ -216,13 +216,13 @@ export function TerminalModal() {
           playCyberTone("success");
           unlockEgg("ctf_flag");
 
-          // Celebrate with confetti
+          // Celebrate with cyber orange and ember confetti
           try {
             confetti({
-              particleCount: 120,
-              spread: 80,
+              particleCount: 130,
+              spread: 85,
               origin: { y: 0.6 },
-              colors: ["#22d3ee", "#8b5cf6", "#00ff9c", "#ffffff"],
+              colors: ["#f97316", "#fb923c", "#f59e0b", "#ff5500", "#ffffff"],
             });
           } catch {
             // Ignore if confetti fails
@@ -302,16 +302,16 @@ export function TerminalModal() {
       onClick={() => setTerminalOpen(false)}
     >
       <div
-        className="w-full max-w-3xl rounded-xl border border-cyan-500/40 bg-slate-950/95 shadow-[0_0_50px_rgba(34,211,238,0.25)] overflow-hidden flex flex-col max-h-[85vh] transition-all"
+        className="w-full max-w-3xl rounded-xl border border-orange-500/40 bg-slate-950/95 shadow-[0_0_50px_rgba(249,115,22,0.25)] overflow-hidden flex flex-col max-h-[85vh] transition-all"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Terminal Header */}
-        <div className="flex items-center justify-between px-4 py-3 bg-slate-900/90 border-b border-cyan-500/20 select-none">
+        <div className="flex items-center justify-between px-4 py-3 bg-slate-900/90 border-b border-orange-500/20 select-none">
           <div className="flex items-center gap-2">
             <span className="h-3 w-3 rounded-full bg-rose-500/80 inline-block" />
             <span className="h-3 w-3 rounded-full bg-amber-500/80 inline-block" />
             <span className="h-3 w-3 rounded-full bg-emerald-500/80 inline-block" />
-            <span className="ml-2 flex items-center gap-1.5 text-xs font-mono text-cyan-400">
+            <span className="ml-2 flex items-center gap-1.5 text-xs font-mono text-orange-400">
               <Terminal className="h-3.5 w-3.5" />
               root@eagleeye-ctf: ~ (bash)
             </span>
@@ -341,13 +341,13 @@ export function TerminalModal() {
               key={line.id}
               className={`whitespace-pre-wrap ${
                 line.type === "input"
-                  ? "text-cyan-300 font-semibold"
+                  ? "text-orange-300 font-semibold"
                   : line.type === "error"
                   ? "text-rose-400 font-semibold"
                   : line.type === "success"
                   ? "text-emerald-400 font-bold"
                   : line.type === "accent"
-                  ? "text-cyan-500/70"
+                  ? "text-orange-500/70"
                   : "text-slate-300"
               }`}
             >
@@ -356,7 +356,7 @@ export function TerminalModal() {
           ))}
 
           {/* Prompt line */}
-          <div className="flex items-center gap-2 pt-1 text-cyan-400">
+          <div className="flex items-center gap-2 pt-1 text-orange-400">
             <span className="shrink-0 font-semibold">guest@eagleeye:~$</span>
             <input
               ref={inputRef}
@@ -364,7 +364,7 @@ export function TerminalModal() {
               value={inputVal}
               onChange={(e) => setInputVal(e.target.value)}
               onKeyDown={handleKeyDown}
-              className="flex-1 bg-transparent text-slate-100 outline-none border-none font-mono caret-cyan-400 placeholder-slate-600"
+              className="flex-1 bg-transparent text-slate-100 outline-none border-none font-mono caret-orange-400 placeholder-slate-600"
               placeholder="type help, cat flag.txt, submit <flag>..."
               autoFocus
               spellCheck={false}

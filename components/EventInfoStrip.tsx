@@ -11,24 +11,24 @@ export function EventInfoStrip() {
       value: "1 - 3",
       label: "Team Size",
       detail: "Fly solo or squad up",
-      color: "from-cyan-500/20 to-cyan-500/5",
-      accent: "text-cyan-400",
+      color: "from-orange-500/20 to-orange-500/5",
+      accent: "text-orange-400",
     },
     {
       icon: Flag,
       value: "5+",
       label: "Core Tracks",
       detail: "7 offensive domains",
-      color: "from-violet-500/20 to-violet-500/5",
-      accent: "text-violet-400",
+      color: "from-amber-500/20 to-amber-500/5",
+      accent: "text-amber-400",
     },
     {
       icon: Trophy,
       value: "TBA",
       label: "Prizes Pool",
       detail: "Cash rewards & swags",
-      color: "from-amber-500/20 to-amber-500/5",
-      accent: "text-amber-400",
+      color: "from-yellow-500/20 to-yellow-500/5",
+      accent: "text-yellow-400",
     },
     {
       icon: Clock,
@@ -49,7 +49,7 @@ export function EventInfoStrip() {
             <div
               key={m.label}
               onMouseEnter={() => playCyberTone("beep")}
-              className={`group relative rounded-2xl border border-slate-800 bg-gradient-to-b ${m.color} p-5 backdrop-blur-md transition-all duration-300 hover:border-cyan-500/40 hover:scale-[1.02] shadow-[0_4px_20px_rgba(0,0,0,0.4)] flex flex-col justify-between`}
+              className={`group relative rounded-2xl border border-slate-800 bg-gradient-to-b ${m.color} p-5 backdrop-blur-md transition-all duration-300 hover:border-orange-500/40 hover:scale-[1.02] shadow-[0_4px_20px_rgba(0,0,0,0.4)] flex flex-col justify-between`}
             >
               <div className="flex items-center justify-between mb-3">
                 <span className="text-[10px] font-mono uppercase tracking-widest text-slate-400">
@@ -59,7 +59,7 @@ export function EventInfoStrip() {
               </div>
 
               <div>
-                <div className="text-2xl sm:text-4xl font-black font-mono text-slate-100 tracking-tight group-hover:text-cyan-300 transition-colors">
+                <div className="text-2xl sm:text-4xl font-black font-mono text-slate-100 tracking-tight group-hover:text-orange-300 transition-colors">
                   {m.value}
                 </div>
                 <div className="text-[11px] text-slate-400 font-sans mt-1">

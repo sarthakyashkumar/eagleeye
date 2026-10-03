@@ -19,7 +19,7 @@ export default function Home() {
 
   return (
     <div
-      className={`min-h-screen flex flex-col bg-[#05070a] text-slate-100 transition-all duration-300 ${
+      className={`min-h-screen flex flex-col bg-[#080604] text-slate-100 transition-all duration-300 ${
         isHackerMode ? "hacker-mode-active" : ""
       }`}
     >

@@ -47,9 +47,9 @@ export function HeroCanvas() {
     });
     if (containerRef.current) observer.observe(containerRef.current);
 
-    // Particle setup
+    // Warm Cyber Orange / Ember Particle setup
     const particleCount = Math.min(Math.floor((width * height) / 16000), 75);
-    const colors = ["#22d3ee", "#00ff9c", "#8b5cf6", "#38bdf8"];
+    const colors = ["#f97316", "#fb923c", "#f59e0b", "#ff5500", "#fdba74"];
     const particles: Particle[] = [];
 
     for (let i = 0; i < particleCount; i++) {
@@ -88,8 +88,8 @@ export function HeroCanvas() {
 
       ctx.clearRect(0, 0, width, height);
 
-      // Draw faint cyber grid background
-      ctx.strokeStyle = "rgba(34, 211, 238, 0.03)";
+      // Draw faint cyber orange grid background
+      ctx.strokeStyle = "rgba(249, 115, 22, 0.035)";
       ctx.lineWidth = 1;
       const gridSize = 64;
       for (let x = 0; x < width; x += gridSize) {
@@ -113,8 +113,8 @@ export function HeroCanvas() {
           const dist = Math.sqrt(dx * dx + dy * dy);
 
           if (dist < 110) {
-            const alpha = (1 - dist / 110) * 0.18;
-            ctx.strokeStyle = `rgba(34, 211, 238, ${alpha})`;
+            const alpha = (1 - dist / 110) * 0.2;
+            ctx.strokeStyle = `rgba(249, 115, 22, ${alpha})`;
             ctx.lineWidth = 0.8;
             ctx.beginPath();
             ctx.moveTo(particles[i].x, particles[i].y);
@@ -175,9 +175,9 @@ export function HeroCanvas() {
 
   return (
     <div ref={containerRef} className="absolute inset-0 pointer-events-none overflow-hidden z-0">
-      <canvas ref={canvasRef} className="w-full h-full opacity-60" />
-      {/* Radial fade out at edges */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,#05070a_85%)]" />
+      <canvas ref={canvasRef} className="w-full h-full opacity-65" />
+      {/* Radial fade out at edges with warm ember dark base */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,#080604_85%)]" />
     </div>
   );
 }

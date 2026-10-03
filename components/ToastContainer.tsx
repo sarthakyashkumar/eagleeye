@@ -18,7 +18,7 @@ export function ToastContainer() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, x: 50, scale: 0.9 }}
             transition={{ duration: 0.25 }}
-            className="pointer-events-auto flex items-start gap-3 rounded-xl border border-cyan-500/40 bg-slate-950/90 p-3.5 backdrop-blur-md shadow-[0_8px_30px_rgba(0,0,0,0.8),0_0_15px_rgba(34,211,238,0.25)] text-slate-100"
+            className="pointer-events-auto flex items-start gap-3 rounded-xl border border-orange-500/40 bg-slate-950/90 p-3.5 backdrop-blur-md shadow-[0_8px_30px_rgba(0,0,0,0.8),0_0_15px_rgba(249,115,22,0.25)] text-slate-100"
           >
             <div className="mt-0.5 shrink-0">
               {toast.type === "egg" && (
@@ -31,12 +31,12 @@ export function ToastContainer() {
                 <ShieldAlert className="h-5 w-5 text-rose-400" />
               )}
               {toast.type === "info" && (
-                <Terminal className="h-5 w-5 text-cyan-400" />
+                <Terminal className="h-5 w-5 text-orange-400" />
               )}
             </div>
 
             <div className="flex-1 min-w-0">
-              <h4 className="text-xs font-mono font-semibold tracking-wider uppercase text-cyan-300">
+              <h4 className="text-xs font-mono font-semibold tracking-wider uppercase text-orange-300">
                 {toast.title}
               </h4>
               <p className="text-xs text-slate-300 mt-0.5 break-words">
