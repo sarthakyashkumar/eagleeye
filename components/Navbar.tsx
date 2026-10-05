@@ -1,8 +1,8 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { EagleEyeLogo } from "./EagleEyeLogo";
-import { NAV_LINKS, EVENT_DETAILS } from "@/lib/config";
+import { GarudaLogo } from "./GarudaLogo";
+import { NAV_LINKS, EVENT_DETAILS } from "@/data/event";
 import { useEasterEggs } from "@/context/EasterEggContext";
 import { playCyberTone } from "@/lib/utils";
 import { Terminal, Menu, X, Lock } from "lucide-react";
@@ -37,7 +37,7 @@ export function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
         {/* Logo */}
-        <EagleEyeLogo />
+        <GarudaLogo />
 
         {/* Desktop Navigation Links */}
         <nav className="hidden md:flex items-center gap-1 lg:gap-2">
@@ -83,13 +83,13 @@ export function Navbar() {
             >
               <Lock className="w-3.5 h-3.5 text-orange-400/70" />
               <span>Register</span>
-              <span className="h-1.5 w-1.5 rounded-full bg-amber-400/80 animate-pulse" />
+              <span className="h-1.5 w-1.5 rounded-full bg-orange-400 animate-pulse" />
             </button>
 
             {/* Custom Tooltip */}
             {showTooltip && (
               <div className="absolute top-full right-0 mt-2 z-50 whitespace-nowrap px-3 py-1.5 rounded-lg bg-slate-950 border border-orange-500/50 text-orange-300 text-[11px] font-mono shadow-[0_0_20px_rgba(249,115,22,0.3)] animate-fadeIn">
-                <span className="text-amber-400 mr-1.5">●</span>
+                <span className="text-orange-400 mr-1.5">●</span>
                 {EVENT_DETAILS.registrationTooltip}
               </div>
             )}

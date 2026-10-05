@@ -14,9 +14,9 @@ export const EASTER_EGGS_LIST: EasterEgg[] = [
   { id: "terminal", name: "Root Shell Spawned", description: "Accessed the secret interactive cyber terminal" },
   { id: "console", name: "Console Reconnaissance", description: "Inspected the browser DevTools matrix" },
   { id: "ctf_flag", name: "CTF Flag Captured", description: "Cracked the base64/ROT13 puzzle & submitted the flag" },
-  { id: "hacker_mode", name: "Inverted Hacker Mode", description: "Rapid-clicked the eagle eye 5 times" },
+  { id: "hacker_mode", name: "Inverted Hacker Mode", description: "Rapid-clicked the Garuda eye 5 times" },
   { id: "breach", name: "Glitch Breach Simulation", description: "Typed 'hack' into the terminal frequency" },
-  { id: "scan_wave", name: "Ocular Radar Pulse", description: "Double-clicked the Eagle Eye to emit a radar wave" },
+  { id: "scan_wave", name: "Ocular Radar Pulse", description: "Double-clicked the Garuda Eye to emit a radar wave" },
   { id: "inspect_dom", name: "DOM Cryptographic Secret", description: "Examined the root source comments" },
 ];
 
@@ -102,21 +102,21 @@ export function EasterEggProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     if (typeof window === "undefined") return;
 
-    const asciiEagle = `
-  %c  ███████╗ █████╗  ██████╗ ██╗     ███████╗███████╗██╗   ██╗███████╗
-  ██╔════╝██╔══██╗██╔════╝ ██║     ██╔════╝██╔════╝╚██╗ ██╔╝██╔════╝
-  █████╗  ███████║██║  ███╗██║     █████╗  █████╗   ╚████╔╝ █████╗  
-  ██╔══╝  ██╔══██║██║   ██║██║     ██╔══╝  ██╔══╝    ╚██╔╝  ██╔══╝  
-  ███████╗██║  ██║╚██████╔╝███████╗███████╗███████╗   ██║   ███████╗
-  ╚══════╝╚═╝  ╚═╝ ╚═════╝ ╚══════╝╚══════╝╚══════╝   ╚═╝   ╚══════╝
+    const asciiGaruda = `
+  %c  ██████╗  █████╗ ██████╗ ██╗   ██╗██████╗  █████╗ 
+  ██╔════╝ ██╔══██╗██╔══██╗██║   ██║██╔══██╗██╔══██╗
+  ██║  ███╗███████║██████╔╝██║   ██║██║  ██║███████║
+  ██║   ██║██╔══██║██╔══██╗██║   ██║██║  ██║██╔══██║
+  ╚██████╔╝██║  ██║██║  ██║╚██████╔╝██████╔╝██║  ██║
+   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝ ╚═════╝ ╚═╝  ╚═╝
     `;
 
     console.log(
-      asciiEagle,
+      asciiGaruda,
       "color: #f97316; font-weight: bold; font-family: monospace; font-size: 11px;"
     );
     console.log(
-      "%c[THE EAGLEEYE CTF :: SYSTEM LOG]\n" +
+      "%c[GARUDA CTF :: SYSTEM LOG]\n" +
         "%c>> Welcome, Operator. Looking for vulnerabilities?\n" +
         ">> HINT 1/3: Check the DOM HTML comment in the root source code.\n" +
         ">> HINT 2/3: Press the backtick (`) key or click the footer prompt to open the root terminal.\n" +

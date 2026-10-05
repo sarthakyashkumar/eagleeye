@@ -9,36 +9,38 @@ import { KonamiOverlay } from "@/components/KonamiOverlay";
 import { GlitchBreachOverlay } from "@/components/GlitchBreachOverlay";
 import { ScanWaveEffect } from "@/components/ScanWaveEffect";
 import { ScrollProgressBar } from "@/components/ScrollProgressBar";
+import { EVENT_DETAILS } from "@/data/event";
 
 export const metadata: Metadata = {
-  title: "The EagleEye | Cybersecurity CTF by IIIT Ranchi",
+  title: `${EVENT_DETAILS.name} | Cybersecurity CTF by IIIT Ranchi`,
   description:
-    "Official Capture The Flag (CTF) offensive cybersecurity competition organized by IIIT Ranchi. Scheduled for 21 November 2026. 5+ Tracks including Web, Crypto, Forensics, Reverse, Boot2Root, and OSINT.",
+    "Official Capture The Flag (CTF) offensive cybersecurity competition organized by IIIT Ranchi. Scheduled for 18 November 2026. 5+ Tracks including Web, Crypto, Forensics, Reverse, Boot2Root, and OSINT.",
   keywords: [
-    "The EagleEye",
-    "EagleEye CTF",
+    "Garuda",
+    "Garuda CTF",
     "IIIT Ranchi CTF",
     "Capture The Flag",
     "Cybersecurity Competition",
     "Ethical Hacking",
     "InfoSec India",
     "Bugthrive",
+    "Frautect",
     "Offensive Security",
   ],
   authors: [{ name: "IIIT Ranchi Cybersecurity Team" }],
   creator: "IIIT Ranchi",
   openGraph: {
-    title: "The EagleEye | Cybersecurity CTF by IIIT Ranchi",
-    description: "Hack. Decode. Capture. The premier collegiate CTF by IIIT Ranchi. 21 Nov 2026.",
-    url: "https://eagleeye.iiitranchi.ac.in",
-    siteName: "The EagleEye CTF",
+    title: `${EVENT_DETAILS.name} | Cybersecurity CTF by IIIT Ranchi`,
+    description: "Hack. Decode. Capture. The premier collegiate CTF by IIIT Ranchi. 18 Nov 2026.",
+    url: "https://garuda.iiitranchi.ac.in",
+    siteName: "Garuda CTF",
     type: "website",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "The EagleEye | Cybersecurity CTF by IIIT Ranchi",
-    description: "Hack. Decode. Capture. 5+ Tracks, Cash Rewards, 21 November 2026.",
+    title: `${EVENT_DETAILS.name} | Cybersecurity CTF by IIIT Ranchi`,
+    description: "Hack. Decode. Capture. 5+ Tracks, Cash Rewards, 18 November 2026.",
   },
   icons: {
     icon: "/favicon.svg",
@@ -64,17 +66,17 @@ export default function RootLayout({
       <head>
         {/*
           ======================================================================
-          [THE EAGLEEYE CTF :: ROOT SOURCE CIPHER]
+          [GARUDA CTF :: ROOT SOURCE CIPHER]
           ======================================================================
           Well done, operator. You inspect what others ignore.
           
           ENCODED PAYLOAD:
-          Um50eXJSbHJ7cGxvM2VfaTFmMTBhX2hheTBweDNxfQ==
+          VG5laHFue3BsbzNlX2kxZjEwYV9oYXkwcHgzcX0=
           
           INSTRUCTIONS:
           1. Base64-decode the payload above to extract an intermediate cipher.
           2. The intermediate cipher was shifted with ROT13.
-          3. The resulting plaintext is the flag format EagleEye{...}
+          3. The resulting plaintext is the flag format Garuda{...}
           4. Submit in the terminal using: submit <flag>
           ======================================================================
         */}

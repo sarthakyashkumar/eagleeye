@@ -10,9 +10,9 @@ export default function NotFound() {
 
   useEffect(() => {
     const traceSteps = [
-      "traceroute to eagleeye.ctf/404-sector (10.13.37.404), 30 hops max, 60 byte packets",
+      "traceroute to garuda.ctf/404-sector (10.13.37.404), 30 hops max, 60 byte packets",
       " 1  core-gateway.iiitranchi.ac.in (10.13.37.1)  0.312 ms  0.289 ms  0.344 ms",
-      " 2  perimeter-defense.eagleeye (10.13.37.254)  0.941 ms  0.887 ms  1.021 ms",
+      " 2  perimeter-defense.garuda (10.13.37.254)  0.941 ms  0.887 ms  1.021 ms",
       " 3  sec-firewall-01.internal (172.16.42.1)  1.423 ms  1.388 ms  1.402 ms",
       " 4  * * * Request timed out.",
       " 5  * * * Request timed out.",
@@ -63,7 +63,7 @@ export default function NotFound() {
             TARGET NOT FOUND
           </h2>
           <p className="text-xs text-slate-400 font-sans mt-2">
-            The requested cyber vector or file descriptor does not exist on the EagleEye network.
+            The requested cyber vector or file descriptor does not exist on the Garuda network.
           </p>
         </div>
 
@@ -71,7 +71,7 @@ export default function NotFound() {
         <div className="bg-black/70 border border-rose-950/60 rounded-xl p-4 text-[11px] sm:text-xs leading-relaxed space-y-1.5 min-h-[180px] max-h-[240px] overflow-y-auto mb-6">
           <div className="text-orange-400 flex items-center gap-2">
             <Terminal className="w-3.5 h-3.5" />
-            <span>root@eagleeye-gateway:~# traceroute -m 6 target-host</span>
+            <span>root@garuda-gateway:~# traceroute -m 6 target-host</span>
           </div>
           {hops.map((hop, index) => (
             <div

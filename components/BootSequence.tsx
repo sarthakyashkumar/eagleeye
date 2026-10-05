@@ -10,7 +10,7 @@ export function BootSequence({ onComplete }: { onComplete: () => void }) {
   const [progress, setProgress] = useState(0);
 
   const bootLines = [
-    "[SYSTEM] Initializing EagleEye v2.6 Core Architecture...",
+    "[SYSTEM] Initializing Garuda v3.0 Core Architecture...",
     "[SECURITY] Establishing TLS 1.3 handshake with IIIT Ranchi node...",
     "[MODULES] Loading Web, Forensics, OSINT, Reverse, Boot2Root, Crypto...",
     "[SCANNING] Performing memory integrity check... OK",
@@ -19,7 +19,7 @@ export function BootSequence({ onComplete }: { onComplete: () => void }) {
 
   const handleFinish = () => {
     if (typeof window !== "undefined") {
-      sessionStorage.setItem("eagleeye_booted", "true");
+      sessionStorage.setItem("garuda_booted", "true");
     }
     setBooting(false);
     onComplete();
@@ -28,7 +28,7 @@ export function BootSequence({ onComplete }: { onComplete: () => void }) {
   useEffect(() => {
     // Check if user already booted this session
     if (typeof window !== "undefined") {
-      const alreadyBooted = sessionStorage.getItem("eagleeye_booted");
+      const alreadyBooted = sessionStorage.getItem("garuda_booted");
       if (alreadyBooted === "true") {
         setBooting(false);
         onComplete();
@@ -90,7 +90,7 @@ export function BootSequence({ onComplete }: { onComplete: () => void }) {
           <div className="flex items-center justify-between border-b border-orange-500/20 pb-3 mb-4 text-xs text-orange-400">
             <span className="flex items-center gap-2">
               <span className="h-2 w-2 rounded-full bg-orange-400 animate-pulse" />
-              BOOT PROTOCOL :: EAGLEEYE-OS
+              BOOT PROTOCOL :: GARUDA-OS
             </span>
             <span className="text-[10px] text-slate-400 bg-orange-950/50 px-2 py-0.5 rounded border border-orange-500/20">
               CLICK / ANY KEY TO SKIP

@@ -5,6 +5,7 @@ const config: Config = {
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./data/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
@@ -18,7 +19,7 @@ const config: Config = {
           flame: "#ea580c",
           dark: "#080604",
           card: "#0f0b08",
-          border: "#261a12",
+          border: "rgba(249, 115, 22, 0.18)",
           muted: "#94a3b8",
         },
       },

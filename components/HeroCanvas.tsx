@@ -113,7 +113,7 @@ export function HeroCanvas() {
           const dist = Math.sqrt(dx * dx + dy * dy);
 
           if (dist < 110) {
-            const alpha = (1 - dist / 110) * 0.2;
+            const alpha = (1 - dist / 110) * 0.22;
             ctx.strokeStyle = `rgba(249, 115, 22, ${alpha})`;
             ctx.lineWidth = 0.8;
             ctx.beginPath();
@@ -175,7 +175,7 @@ export function HeroCanvas() {
 
   return (
     <div ref={containerRef} className="absolute inset-0 pointer-events-none overflow-hidden z-0">
-      <canvas ref={canvasRef} className="w-full h-full opacity-65" />
+      <canvas ref={canvasRef} className="w-full h-full opacity-70" />
       {/* Radial fade out at edges with warm ember dark base */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_0%,#080604_85%)]" />
     </div>

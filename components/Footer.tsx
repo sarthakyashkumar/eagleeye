@@ -1,8 +1,9 @@
 "use client";
 
 import React from "react";
-import { EagleEyeLogo } from "./EagleEyeLogo";
-import { NAV_LINKS } from "@/lib/config";
+import { GarudaLogo } from "./GarudaLogo";
+import { NAV_LINKS, EVENT_DETAILS } from "@/data/event";
+import { SPONSORS, SPONSOR_TIERS } from "@/data/sponsors";
 import { useEasterEggs } from "@/context/EasterEggContext";
 import { playCyberTone } from "@/lib/utils";
 import { Terminal, Sparkles, ExternalLink } from "lucide-react";
@@ -16,9 +17,18 @@ export function Footer() {
     playCyberTone("beep");
   };
 
+  // Generate partner/sponsor lines from data/sponsors.ts
+  const sponsorTierLines = SPONSOR_TIERS.map((tier) => {
+    const sponsors = SPONSORS.filter((s) => s.tier === tier.id);
+    return {
+      label: tier.label,
+      sponsors,
+    };
+  }).filter((item) => item.sponsors.length > 0);
+
   return (
-    <footer className="relative bg-[#050302] border-t border-slate-900 pt-16 pb-12 overflow-hidden select-none">
-      {/* Ambient background warm ember glow */}
+    <footer className="relative bg-[#060402] border-t border-slate-900 pt-16 pb-12 overflow-hidden select-none">
+      {/* Ambient background orange glow */}
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[300px] bg-orange-500/5 rounded-full blur-[140px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -26,14 +36,13 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 pb-16 border-b border-slate-900">
           {/* Col 1: Brand & Logo */}
           <div className="md:col-span-2 space-y-4">
-            <EagleEyeLogo size={42} />
+            <GarudaLogo size={42} />
             <p className="text-xs sm:text-sm text-slate-400 font-sans max-w-sm leading-relaxed">
-              The premier national cybersecurity Capture The Flag competition organized by the
-              Department of Computer Science & Engineering at IIIT Ranchi.
+              {EVENT_DETAILS.description}
             </p>
             <div className="flex items-center gap-2 text-xs font-mono text-orange-400">
               <span className="h-2 w-2 rounded-full bg-orange-400 animate-ping" />
-              <span>Host Node: IIIT Ranchi, Jharkhand, India</span>
+              <span>Host Node: {EVENT_DETAILS.hostShort}, Jharkhand, India</span>
             </div>
           </div>
 
@@ -62,23 +71,33 @@ export function Footer() {
             <h4 className="text-xs font-mono uppercase tracking-widest text-slate-300 font-semibold mb-4">
               // Alliances
             </h4>
-            <div className="space-y-3 text-xs">
-              <a
-                href="https://bugthrive.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => playCyberTone("beep")}
-                className="group inline-flex items-center gap-1.5 text-slate-400 hover:text-orange-300 transition-colors"
-              >
-                <span>Bugthrive (Security Partner)</span>
-                <ExternalLink className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
-              </a>
+            <div className="space-y-2.5 text-xs font-mono">
+              {/* Dynamically generated partner & sponsor lines from data/sponsors.ts */}
+              {sponsorTierLines.map((tierGroup) =>
+                tierGroup.sponsors.map((sponsor) => (
+                  <div key={sponsor.name}>
+                    <a
+                      href={sponsor.url || "#"}
+                      target={sponsor.url?.startsWith("http") ? "_blank" : undefined}
+                      rel={sponsor.url?.startsWith("http") ? "noopener noreferrer" : undefined}
+                      onClick={() => playCyberTone("beep")}
+                      className="group inline-flex items-center gap-1.5 text-slate-400 hover:text-orange-300 transition-colors"
+                    >
+                      <span className="text-slate-500">{tierGroup.label}:</span>
+                      <span className="font-semibold text-slate-300 group-hover:text-orange-400">
+                        {sponsor.name}
+                      </span>
+                      <ExternalLink className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
+                    </a>
+                  </div>
+                ))
+              )}
 
               {/* Easter Eggs Counter Badge */}
               <div className="mt-4 p-3 rounded-xl bg-slate-950/80 border border-orange-500/30 font-mono text-xs">
                 <div className="flex items-center justify-between text-orange-400 mb-1">
                   <span className="flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-wider">
-                    <Sparkles className="w-3.5 h-3.5 text-amber-400" />
+                    <Sparkles className="w-3.5 h-3.5 text-orange-300" />
                     Easter Eggs Discovered
                   </span>
                   <span className="font-bold">
@@ -105,18 +124,18 @@ export function Footer() {
         <div className="py-12 sm:py-16 text-center overflow-hidden">
           <h2
             onClick={handlePromptClick}
-            className="text-5xl sm:text-8xl md:text-9xl lg:text-[13rem] font-black tracking-tighter uppercase transition-all duration-500 cursor-pointer select-none text-transparent stroke-text hover:text-orange-400 hover:drop-shadow-[0_0_60px_rgba(249,115,22,0.5)]"
+            className="text-6xl sm:text-8xl md:text-9xl lg:text-[14rem] font-black tracking-tighter uppercase transition-all duration-500 cursor-pointer select-none text-transparent stroke-text hover:text-orange-400 hover:drop-shadow-[0_0_60px_rgba(249,115,22,0.5)]"
             title="Click to spawn command prompt"
           >
-            THE EAGLEEYE
+            GARUDA
           </h2>
         </div>
 
         {/* Bottom Bar & Harmless Mystery Prompt */}
         <div className="pt-6 border-t border-slate-900 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-slate-400">
           <div className="flex items-center gap-1.5">
-            <span>© 2026 The EagleEye • Organized by</span>
-            <span className="text-slate-300 font-semibold">IIIT Ranchi</span>
+            <span>© 2026 {EVENT_DETAILS.name} • Organized by</span>
+            <span className="text-slate-300 font-semibold">{EVENT_DETAILS.hostShort}</span>
           </div>
 
           {/* Interactive footer prompt */}

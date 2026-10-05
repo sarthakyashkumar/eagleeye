@@ -22,7 +22,7 @@ export function ToastContainer() {
           >
             <div className="mt-0.5 shrink-0">
               {toast.type === "egg" && (
-                <Sparkles className="h-5 w-5 text-amber-400 animate-pulse" />
+                <Sparkles className="h-5 w-5 text-orange-300 animate-pulse" />
               )}
               {toast.type === "success" && (
                 <CheckCircle2 className="h-5 w-5 text-emerald-400" />

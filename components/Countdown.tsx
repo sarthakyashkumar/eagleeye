@@ -2,10 +2,10 @@
 
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { EVENT_TARGET_DATE } from "@/lib/config";
+import { EVENT_DATE } from "@/data/event";
 
-// Single configurable target date constant at the top of the file
-export const COUNTDOWN_TARGET = EVENT_TARGET_DATE;
+// Single configurable target date constant sourced from data/event.ts
+export const COUNTDOWN_TARGET = EVENT_DATE;
 
 interface TimeLeft {
   days: number;
@@ -79,9 +79,9 @@ export function Countdown() {
       <motion.div
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
-        className="my-8 p-6 rounded-2xl border border-amber-500/40 bg-amber-950/20 backdrop-blur-md shadow-[0_0_40px_rgba(245,158,11,0.25)] text-center max-w-lg mx-auto"
+        className="my-8 p-6 rounded-2xl border border-orange-500/40 bg-orange-950/20 backdrop-blur-md shadow-[0_0_40px_rgba(249,115,22,0.25)] text-center max-w-lg mx-auto"
       >
-        <span className="font-mono text-xs uppercase tracking-widest text-amber-400 font-bold block mb-1">
+        <span className="font-mono text-xs uppercase tracking-widest text-orange-400 font-bold block mb-1">
           [TARGET TIME REACHED]
         </span>
         <h3 className="text-2xl sm:text-3xl font-black font-mono text-slate-100 uppercase tracking-wider">
@@ -154,7 +154,7 @@ export function Countdown() {
 
       <div className="text-center mt-3">
         <span className="text-[11px] font-mono text-slate-400 tracking-wider">
-          TARGET: 21 NOV 2026 • 00:00 IST (UTC+05:30)
+          TARGET: 18 NOV 2026 • 00:00 IST (UTC+05:30)
         </span>
       </div>
     </div>

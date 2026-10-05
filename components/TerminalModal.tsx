@@ -2,7 +2,7 @@
 
 import React, { useState, useRef, useEffect } from "react";
 import { useEasterEggs } from "@/context/EasterEggContext";
-import { CTF_FLAG } from "@/lib/config";
+import { CTF_FLAG } from "@/data/event";
 import { playCyberTone } from "@/lib/utils";
 import confetti from "canvas-confetti";
 import { Terminal, X } from "lucide-react";
@@ -24,7 +24,7 @@ export function TerminalModal() {
     {
       id: "init-2",
       type: "success",
-      text: "[THE EAGLEEYE SECURE SHELL v2.6 - ACCESS GRANTED]",
+      text: "[GARUDA CTF SECURE SHELL v3.0 - ACCESS GRANTED]",
     },
     {
       id: "init-3",
@@ -66,7 +66,7 @@ export function TerminalModal() {
 
     const newLines: TerminalLine[] = [
       ...lines,
-      { id: Math.random().toString(), type: "input", text: `guest@eagleeye:~$ ${cmd}` },
+      { id: Math.random().toString(), type: "input", text: `guest@garuda:~$ ${cmd}` },
     ];
 
     const args = cmd.split(" ");
@@ -83,7 +83,7 @@ export function TerminalModal() {
             "  whoami       - Display current active user identity",
             "  ls           - List files in current directory",
             "  cat <file>   - Read contents of a file (e.g., cat flag.txt)",
-            "  submit <flag>- Submit captured CTF flag format EagleEye{...}",
+            "  submit <flag>- Submit captured CTF flag format Garuda{...}",
             "  sudo         - Execute elevated superuser command",
             "  nmap         - Scan perimeter network ports",
             "  ping         - ICMP ping event gateway",
@@ -100,7 +100,7 @@ export function TerminalModal() {
         newLines.push({
           id: Math.random().toString(),
           type: "output",
-          text: "guest@eagleeye",
+          text: "guest@garuda",
         });
         playCyberTone("beep");
         break;
@@ -129,14 +129,14 @@ export function TerminalModal() {
               "[FLAG REPOSITORY]",
               "You think a root flag is sitting unencrypted in plain text?",
               "Hint: Inspect the DOM HTML root comments. Then decode the base64 -> ROT13 cipher string.",
-              "Format: EagleEye{...}",
+              "Format: Garuda{...}",
             ].join("\n"),
           });
         } else if (commandArg === "instructions.md") {
           newLines.push({
             id: Math.random().toString(),
             type: "output",
-            text: "EagleEye CTF is hosted by IIIT Ranchi on 21 November 2026. Stay sharp.",
+            text: "Garuda CTF is hosted by IIIT Ranchi on 18 November 2026. Stay sharp.",
           });
         } else {
           newLines.push({
@@ -162,10 +162,10 @@ export function TerminalModal() {
           id: Math.random().toString(),
           type: "output",
           text: [
-            "Starting Nmap 7.94 ( https://nmap.org ) at eagleeye.iiitranchi.ac.in",
+            "Starting Nmap 7.94 ( https://nmap.org ) at garuda.iiitranchi.ac.in",
             "Nmap scan report for host (10.13.37.1)",
             "PORT     STATE SERVICE",
-            "22/tcp   open  ssh (EagleEye Secure Shell)",
+            "22/tcp   open  ssh (Garuda Secure Shell)",
             "80/tcp   open  http (Next.js Stealth Engine)",
             "443/tcp  open  https (TLS 1.3)",
             "1337/tcp open  ctf-daemon (CTFd Flag Validator)",
@@ -207,7 +207,7 @@ export function TerminalModal() {
             type: "success",
             text: [
               "****************************************************************",
-              "  [+] FLAG VERIFIED: YOU CAPTURED THE EAGLE EYE ROOT FLAG!   ",
+              "  [+] FLAG VERIFIED: YOU CAPTURED THE GARUDA ROOT FLAG!   ",
               "  [+] Flag: " + CTF_FLAG,
               "  [+] Status: CTF Master Solver Badge UNLOCKED",
               "****************************************************************",
@@ -216,13 +216,13 @@ export function TerminalModal() {
           playCyberTone("success");
           unlockEgg("ctf_flag");
 
-          // Celebrate with cyber orange and ember confetti
+          // Celebrate with cyber orange, amber, flame, and gold confetti
           try {
             confetti({
-              particleCount: 130,
-              spread: 85,
+              particleCount: 140,
+              spread: 90,
               origin: { y: 0.6 },
-              colors: ["#f97316", "#fb923c", "#f59e0b", "#ff5500", "#ffffff"],
+              colors: ["#f97316", "#ea580c", "#fb923c", "#f59e0b", "#fbbf24", "#ffffff"],
             });
           } catch {
             // Ignore if confetti fails
@@ -313,7 +313,7 @@ export function TerminalModal() {
             <span className="h-3 w-3 rounded-full bg-emerald-500/80 inline-block" />
             <span className="ml-2 flex items-center gap-1.5 text-xs font-mono text-orange-400">
               <Terminal className="h-3.5 w-3.5" />
-              root@eagleeye-ctf: ~ (bash)
+              root@garuda-ctf: ~ (bash)
             </span>
           </div>
 
@@ -357,7 +357,7 @@ export function TerminalModal() {
 
           {/* Prompt line */}
           <div className="flex items-center gap-2 pt-1 text-orange-400">
-            <span className="shrink-0 font-semibold">guest@eagleeye:~$</span>
+            <span className="shrink-0 font-semibold">guest@garuda:~$</span>
             <input
               ref={inputRef}
               type="text"

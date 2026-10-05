@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 60" fill="none">
+  <!-- Bugthrive Cyber Shield / Hex Icon -->
+  <g transform="translate(10, 10)">
+    <polygon points="20,2 38,12 38,32 20,42 2,32 2,12" stroke="#f97316" stroke-width="2.5" fill="rgba(249, 115, 22, 0.08)"/>
+    <!-- Glowing core beetle/cyber node -->
+    <circle cx="20" cy="22" r="6" fill="#f97316" />
+    <path d="M20 12 L20 16 M12 28 L8 34 M28 28 L32 34 M13 17 L8 14 M27 17 L32 14" stroke="#f97316" stroke-width="2" stroke-linecap="round"/>
+  </g>
+  <!-- Text Wordmark -->
+  <text x="64" y="38" font-family="'Space Grotesk', Inter, system-ui, sans-serif" font-size="24" font-weight="800" letter-spacing="0.08em" fill="#ffffff">
+    BUG<tspan fill="#f97316">THRIVE</tspan>
+  </text>
+</svg>

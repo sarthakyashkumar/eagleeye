@@ -1,5 +1,5 @@
 # ==============================================================================
-# THE EAGLEEYE CTF :: ROBOTS POLICY
+# GARUDA CTF :: ROBOTS POLICY
 # ==============================================================================
 User-agent: *
 Disallow: /admin
@@ -11,7 +11,7 @@ Disallow: /secret-keys/
 # You are searching in the right direction, web crawler!
 # But the true flag is not stored in plain text files.
 # Have you inspected the root HTML DOM comments?
-# Decode Base64 -> ROT13 -> flag format: EagleEye{...}
+# Decode Base64 -> ROT13 -> flag format: Garuda{...}
 # Submit flags inside the interactive terminal modal (` or ~ key).
 #
 # Event Contact: aakash.2024ug1075@iiitranchi.ac.in

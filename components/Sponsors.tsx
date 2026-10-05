@@ -2,18 +2,51 @@
 
 import React from "react";
 import { DecryptText } from "./DecryptText";
-import { SPONSORS } from "@/lib/config";
+import { SPONSORS, SPONSOR_TIERS, type Sponsor } from "@/data/sponsors";
 import { ExternalLink, Handshake, Plus, ArrowDown } from "lucide-react";
 import { playCyberTone } from "@/lib/utils";
 
 export function Sponsors() {
+  // Group sponsors by tier order defined in SPONSOR_TIERS
+  const tierMap = new Map(SPONSOR_TIERS.map((t) => [t.id, t.label]));
+
+  // Build marquee items with real sponsors + placeholder slots
   const marqueeItems = [
-    { type: "partner", name: "BUGTHRIVE", role: "Official Security Partner", link: "https://bugthrive.com/" },
-    { type: "slot", name: "YOUR LOGO HERE", role: "Tier 1 Title Sponsor", link: "#contact" },
-    { type: "slot", name: "INFRASTRUCTURE NODE", role: "Cloud Partner Slot", link: "#contact" },
-    { type: "partner", name: "BUGTHRIVE", role: "Official Security Partner", link: "https://bugthrive.com/" },
-    { type: "slot", name: "COMMUNITY ALLY", role: "Media & Outreach Partner", link: "#contact" },
-    { type: "slot", name: "HARDWARE LABS", role: "Tooling & Platform Partner", link: "#contact" },
+    ...SPONSORS.map((s) => ({
+      type: "partner" as const,
+      name: s.name.toUpperCase(),
+      role: tierMap.get(s.tier) || s.tier,
+      link: s.url || "#contact",
+      logo: s.logo,
+    })),
+    {
+      type: "slot" as const,
+      name: "YOUR LOGO HERE",
+      role: "Tier 1 Title Sponsor",
+      link: "#contact",
+      logo: undefined,
+    },
+    {
+      type: "slot" as const,
+      name: "INFRASTRUCTURE NODE",
+      role: "Cloud Platform Slot",
+      link: "#contact",
+      logo: undefined,
+    },
+    {
+      type: "slot" as const,
+      name: "COMMUNITY ALLY",
+      role: "Media & Outreach Partner",
+      link: "#contact",
+      logo: undefined,
+    },
+    {
+      type: "slot" as const,
+      name: "HARDWARE LABS",
+      role: "Tooling & Platform Partner",
+      link: "#contact",
+      logo: undefined,
+    },
   ];
 
   return (
@@ -39,36 +72,52 @@ export function Sponsors() {
           </p>
         </div>
 
-        {/* Featured Partner Card: Bugthrive */}
-        <div className="max-w-2xl mx-auto mb-16">
-          <a
-            href="https://bugthrive.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={() => playCyberTone("beep")}
-            className="group relative block rounded-2xl border border-orange-500/40 bg-slate-950/80 p-8 backdrop-blur-md transition-all duration-300 hover:border-orange-400 hover:shadow-[0_0_40px_rgba(249,115,22,0.25)] text-center"
-          >
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-orange-950/60 border border-orange-500/30 text-orange-300 text-[10px] font-mono uppercase tracking-wider mb-4">
-              <span className="h-1.5 w-1.5 rounded-full bg-orange-400 animate-ping" />
-              {SPONSORS[0].tier}
-            </div>
+        {/* Data-Driven Sponsor Cards grouped by SPONSOR_TIERS */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-16">
+          {SPONSOR_TIERS.map((tier) => {
+            const sponsorsInTier = SPONSORS.filter((s) => s.tier === tier.id);
+            if (sponsorsInTier.length === 0) return null;
 
-            {/* Clean typography wordmark for Bugthrive (no copied logo) */}
-            <div className="flex items-center justify-center gap-3">
-              <span className="text-3xl sm:text-4xl font-black tracking-tight text-white uppercase group-hover:text-orange-300 transition-colors font-mono">
-                BUGTHRIVE
-              </span>
-              <ExternalLink className="w-5 h-5 text-orange-400 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-            </div>
+            return sponsorsInTier.map((sponsor) => (
+              <a
+                key={sponsor.name}
+                href={sponsor.url || "#contact"}
+                target={sponsor.url?.startsWith("http") ? "_blank" : undefined}
+                rel={sponsor.url?.startsWith("http") ? "noopener noreferrer" : undefined}
+                onClick={() => playCyberTone("beep")}
+                className="group relative flex flex-col justify-between rounded-2xl border border-orange-500/30 bg-slate-950/80 p-8 backdrop-blur-md transition-all duration-300 hover:border-orange-400 hover:shadow-[0_0_40px_rgba(249,115,22,0.25)] text-center"
+              >
+                <div>
+                  <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-orange-950/60 border border-orange-500/30 text-orange-300 text-[10px] font-mono uppercase tracking-wider mb-5">
+                    <span className="h-1.5 w-1.5 rounded-full bg-orange-400 animate-ping" />
+                    {tier.label}
+                  </div>
 
-            <p className="mt-3 text-xs sm:text-sm text-slate-300 font-sans max-w-md mx-auto">
-              {SPONSORS[0].description}
-            </p>
+                  {/* Clean SVG Logo or Wordmark */}
+                  <div className="flex items-center justify-center min-h-[64px] my-2">
+                    {sponsor.logo ? (
+                      <div className="relative h-12 w-48 transition-transform group-hover:scale-105 duration-300 flex items-center justify-center">
+                        <img
+                          src={sponsor.logo}
+                          alt={sponsor.name}
+                          className="max-h-full max-w-full object-contain filter drop-shadow-[0_0_12px_rgba(249,115,22,0.25)]"
+                        />
+                      </div>
+                    ) : (
+                      <span className="text-3xl sm:text-4xl font-black tracking-tight text-white uppercase group-hover:text-orange-300 transition-colors font-mono">
+                        {sponsor.name}
+                      </span>
+                    )}
+                  </div>
+                </div>
 
-            <div className="mt-4 text-[11px] font-mono text-orange-400/80 group-hover:text-orange-300 transition-colors">
-              Visit bugthrive.com &rarr;
-            </div>
-          </a>
+                <div className="mt-6 pt-4 border-t border-slate-800/80 flex items-center justify-center gap-2 text-xs font-mono text-orange-400/80 group-hover:text-orange-300 transition-colors">
+                  <span>Visit {sponsor.name}</span>
+                  <ExternalLink className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                </div>
+              </a>
+            ));
+          })}
         </div>
 
         {/* Infinite Marquee Strip */}

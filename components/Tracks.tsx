@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { TRACKS, TrackItem } from "@/lib/config";
+import { TRACKS, TrackItem } from "@/data/tracks";
 import { DecryptText } from "./DecryptText";
 import { playCyberTone } from "@/lib/utils";
 import {
@@ -23,7 +23,7 @@ function TrackMicroAnimation({ trackId, isHovered }: { trackId: string; isHovere
       <div className="mt-4 p-3 rounded-lg bg-black/60 border border-orange-500/20 font-mono text-[11px] leading-tight space-y-1 overflow-hidden">
         <div className="flex items-center justify-between text-slate-400">
           <span className="text-orange-400">HTTP/2 POST /api/admin</span>
-          <span className={isHovered ? "text-emerald-400 font-bold" : "text-amber-400"}>
+          <span className={isHovered ? "text-emerald-400 font-bold" : "text-orange-300"}>
             {isHovered ? "200 [PWNED]" : "403 [DENIED]"}
           </span>
         </div>
@@ -63,9 +63,9 @@ function TrackMicroAnimation({ trackId, isHovered }: { trackId: string; isHovere
           <span className="text-emerald-400">.PNG</span>
         </div>
         <div className="text-slate-400 flex justify-between tracking-wider">
-          <span className="text-orange-300">45 61 67 6C</span>
-          <span>65 45 79 65</span>
-          <span className="text-orange-400">EagleEye</span>
+          <span className="text-orange-300">47 61 72 75</span>
+          <span>64 61 00 FF</span>
+          <span className="text-orange-400 font-bold">Garuda</span>
         </div>
       </div>
     );
@@ -90,14 +90,14 @@ function TrackMicroAnimation({ trackId, isHovered }: { trackId: string; isHovere
 
   if (trackId === "boot2root") {
     return (
-      <div className="mt-4 p-3 rounded-lg bg-black/60 border border-amber-500/20 font-mono text-[11px] space-y-1">
-        <div className="text-amber-400 text-[10px] uppercase tracking-wider flex justify-between">
+      <div className="mt-4 p-3 rounded-lg bg-black/60 border border-orange-500/20 font-mono text-[11px] space-y-1">
+        <div className="text-orange-400 text-[10px] uppercase tracking-wider flex justify-between">
           <span>Linux PrivEsc</span>
           <span>Kernel 6.1</span>
         </div>
         <div className="text-[10px]">
           <span className="text-slate-400">$ ./dirty_pipe_exploit</span>
-          <div className={isHovered ? "text-emerald-400 font-bold" : "text-amber-400"}>
+          <div className={isHovered ? "text-emerald-400 font-bold" : "text-orange-400"}>
             {isHovered ? "# whoami -> root (UID=0)" : "$ whoami -> guest (UID=1000)"}
           </div>
         </div>
@@ -124,8 +124,8 @@ function TrackMicroAnimation({ trackId, isHovered }: { trackId: string; isHovere
 
   if (trackId === "misc") {
     return (
-      <div className="mt-4 p-3 rounded-lg bg-black/60 border border-orange-500/20 font-mono text-[10px] space-y-1">
-        <div className="text-orange-400 uppercase tracking-wider flex justify-between">
+      <div className="mt-4 p-3 rounded-lg bg-black/60 border border-amber-500/20 font-mono text-[10px] space-y-1">
+        <div className="text-amber-400 uppercase tracking-wider flex justify-between">
           <span>SDR Radio & AI Jailbreak</span>
           <span>433.92 MHz</span>
         </div>
@@ -179,7 +179,7 @@ function BentoCard({ track }: { track: TrackItem }) {
       }}
       onMouseLeave={() => setIsHovered(false)}
       onMouseMove={handleMouseMove}
-      className={`group relative rounded-2xl border border-slate-800/80 bg-slate-950/70 p-6 backdrop-blur-md overflow-hidden transition-all duration-300 hover:border-orange-500/50 hover:shadow-[0_0_30px_rgba(249,115,22,0.18)] flex flex-col justify-between ${
+      className={`group relative rounded-2xl border border-slate-800/80 bg-slate-950/70 p-6 backdrop-blur-md overflow-hidden transition-all duration-300 hover:border-orange-500/50 hover:shadow-[0_0_30px_rgba(249,115,22,0.2)] flex flex-col justify-between ${
         track.colSpan || ""
       }`}
     >
@@ -187,14 +187,14 @@ function BentoCard({ track }: { track: TrackItem }) {
       <div
         className="pointer-events-none absolute -inset-px opacity-0 group-hover:opacity-100 transition-opacity duration-300"
         style={{
-          background: `radial-gradient(400px circle at ${mousePos.x}px ${mousePos.y}px, rgba(249, 115, 22, 0.09), transparent 70%)`,
+          background: `radial-gradient(400px circle at ${mousePos.x}px ${mousePos.y}px, rgba(249, 115, 22, 0.1), transparent 70%)`,
         }}
       />
 
       {/* Top Header */}
       <div>
         <div className="flex items-center justify-between mb-4">
-          <div className="p-3 rounded-xl bg-orange-950/40 border border-orange-500/30 text-orange-400 group-hover:text-orange-300 group-hover:border-orange-400 group-hover:shadow-[0_0_15px_rgba(249,115,22,0.3)] transition-all">
+          <div className="p-3 rounded-xl bg-orange-950/40 border border-orange-500/30 text-orange-400 group-hover:text-orange-300 group-hover:border-orange-400 group-hover:shadow-[0_0_15px_rgba(249,115,22,0.35)] transition-all">
             <IconComponent className="w-6 h-6" />
           </div>
 

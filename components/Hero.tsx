@@ -4,7 +4,7 @@ import React from "react";
 import { HeroCanvas } from "./HeroCanvas";
 import { Countdown } from "./Countdown";
 import { DecryptText } from "./DecryptText";
-import { EVENT_DETAILS } from "@/lib/config";
+import { EVENT_DETAILS } from "@/data/event";
 import { useEasterEggs } from "@/context/EasterEggContext";
 import { playCyberTone } from "@/lib/utils";
 import { motion } from "framer-motion";
@@ -48,14 +48,14 @@ export function Hero() {
 
         {/* Main Headline with Text Scramble */}
         <div className="relative my-2">
-          <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-black tracking-tight uppercase text-transparent bg-clip-text bg-gradient-to-b from-white via-slate-100 to-slate-400 drop-shadow-[0_0_40px_rgba(249,115,22,0.35)]">
-            <DecryptText text="The EagleEye" speed={40} delay={200} />
+          <h1 className="text-6xl sm:text-8xl md:text-9xl lg:text-[10rem] font-black tracking-tight uppercase text-transparent bg-clip-text bg-gradient-to-b from-white via-slate-100 to-slate-400 drop-shadow-[0_0_40px_rgba(249,115,22,0.35)]">
+            <DecryptText text={EVENT_DETAILS.name} speed={40} delay={200} />
           </h1>
 
           {/* Glitch chromatic overlay clone on hover */}
           <div className="absolute inset-0 pointer-events-none select-none opacity-0 hover:opacity-100 transition-opacity">
-            <span className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-black tracking-tight uppercase text-orange-500/20 blur-[1px]">
-              The EagleEye
+            <span className="text-6xl sm:text-8xl md:text-9xl lg:text-[10rem] font-black tracking-tight uppercase text-orange-500/20 blur-[1px]">
+              {EVENT_DETAILS.name}
             </span>
           </div>
         </div>
@@ -81,8 +81,8 @@ export function Hero() {
           transition={{ delay: 0.6, duration: 0.8 }}
           className="max-w-2xl mx-auto text-xs sm:text-sm md:text-base text-slate-300 leading-relaxed font-sans mt-2 mb-4"
         >
-          The flagship cybersecurity Capture The Flag challenge hosted by the Indian Institute of Information Technology Ranchi.
-          Sharpen your exploits, solve cryptic ciphers, and defend the perimeter.
+          The premier collegiate cybersecurity Capture The Flag challenge hosted by the Indian Institute of Information Technology Ranchi.
+          Sharpen your exploits, solve cryptic ciphers, and conquer the leaderboard.
         </motion.p>
 
         {/* Action Buttons */}

@@ -1,12 +1,12 @@
 # ==============================================================================
-# THE EAGLEEYE CTF :: RFC 9116 SECURITY POLICY
+# GARUDA CTF :: RFC 9116 SECURITY POLICY
 # ==============================================================================
 Contact: mailto:aakash.2024ug1075@iiitranchi.ac.in
 Contact: tel:+917568934944
 Expires: 2026-12-31T23:59:59.000Z
 Preferred-Languages: en, hi
-Canonical: https://eagleeye.iiitranchi.ac.in/.well-known/security.txt
-Policy: https://eagleeye.iiitranchi.ac.in/#about
+Canonical: https://garuda.iiitranchi.ac.in/.well-known/security.txt
+Policy: https://garuda.iiitranchi.ac.in/#about
 Hiring: https://iiitranchi.ac.in/
 
 # [CTF ADVISORY]:

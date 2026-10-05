@@ -64,7 +64,7 @@ export function Prizes() {
               <div className="absolute -inset-2 rounded-2xl border border-orange-400/20 animate-ping pointer-events-none" />
             </div>
 
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-slate-900 border border-amber-500/30 text-amber-400 text-[11px] font-mono uppercase tracking-wider mb-6">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-slate-900 border border-orange-500/30 text-orange-300 text-[11px] font-mono uppercase tracking-wider mb-6">
               <Key className="w-3.5 h-3.5" />
               <span>Vault Status: Encrypted with 4096-bit Key</span>
             </div>
@@ -109,7 +109,7 @@ export function Prizes() {
 
               {/* 3rd Place */}
               <div className="relative rounded-2xl border border-slate-800 bg-slate-900/60 p-5 backdrop-blur-md overflow-hidden">
-                <div className="text-[10px] font-mono text-emerald-400 uppercase tracking-widest mb-1">
+                <div className="text-[10px] font-mono text-yellow-400 uppercase tracking-widest mb-1">
                   3RD PLACE // BRONZE
                 </div>
                 <div className="text-xl font-mono font-bold text-slate-100 filter blur-[6px] select-none">
@@ -118,8 +118,8 @@ export function Prizes() {
                 <div className="text-xs text-slate-400 mt-2 filter blur-[4px] select-none">
                   Cloud Vouchers & Merch
                 </div>
-                <div className="absolute inset-0 bg-emerald-950/20 flex items-center justify-center">
-                  <span className="text-[10px] font-mono text-emerald-300 bg-black/80 px-2 py-1 rounded border border-emerald-500/30">
+                <div className="absolute inset-0 bg-yellow-950/20 flex items-center justify-center">
+                  <span className="text-[10px] font-mono text-yellow-300 bg-black/80 px-2 py-1 rounded border border-yellow-500/30">
                     LOCKED
                   </span>
                 </div>

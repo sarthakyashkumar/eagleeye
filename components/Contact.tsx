@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { CONTACTS, ContactPerson } from "@/lib/config";
+import { CONTACTS, ContactPerson } from "@/data/contacts";
 import { DecryptText } from "./DecryptText";
 import { useEasterEggs } from "@/context/EasterEggContext";
 import { playCyberTone } from "@/lib/utils";

@@ -4,6 +4,7 @@ import path from "path";
 
 const chromePath = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome";
 const screenshotsDir = "/Users/sarthakyashkumar/Downloads/EagleEye/screenshots";
+const artifactDir = "/Users/sarthakyashkumar/.gemini/antigravity/brain/0f525c58-823b-4718-93ce-6d40e9e12981";
 
 if (!fs.existsSync(screenshotsDir)) {
   fs.mkdirSync(screenshotsDir, { recursive: true });
@@ -21,19 +22,20 @@ async function run() {
 
   // Pre-seed sessionStorage to skip boot sequence for steady screenshotting
   await page.evaluateOnNewDocument(() => {
+    sessionStorage.setItem("garuda_booted", "true");
     sessionStorage.setItem("eagleeye_booted", "true");
   });
 
   // 1. Desktop 1440x900
-  console.log("Navigating to http://localhost:3000 (Desktop 1440px)...");
+  console.log("Navigating to http://localhost:3030 (Desktop 1440px)...");
   await page.setViewport({ width: 1440, height: 900, deviceScaleFactor: 2 });
-  await page.goto("http://localhost:3000", { waitUntil: "networkidle0" });
+  await page.goto("http://localhost:3030", { waitUntil: "networkidle0" });
   await new Promise((r) => setTimeout(r, 1200));
 
   // Hero
   console.log("Capturing Desktop Hero...");
   await page.evaluate(() => window.scrollTo(0, 0));
-  await new Promise((r) => setTimeout(r, 400));
+  await new Promise((r) => setTimeout(r, 500));
   await page.screenshot({ path: path.join(screenshotsDir, "desktop_hero.png") });
 
   // Manifesto
@@ -54,6 +56,15 @@ async function run() {
   await new Promise((r) => setTimeout(r, 600));
   await page.screenshot({ path: path.join(screenshotsDir, "desktop_tracks.png") });
 
+  // Sponsors
+  console.log("Capturing Desktop Sponsors...");
+  await page.evaluate(() => {
+    const el = document.getElementById("sponsors");
+    if (el) el.scrollIntoView({ behavior: "instant" });
+  });
+  await new Promise((r) => setTimeout(r, 600));
+  await page.screenshot({ path: path.join(screenshotsDir, "desktop_sponsors.png") });
+
   // Prizes Vault
   console.log("Capturing Desktop Prizes...");
   await page.evaluate(() => {
@@ -72,16 +83,27 @@ async function run() {
   await new Promise((r) => setTimeout(r, 600));
   await page.screenshot({ path: path.join(screenshotsDir, "desktop_contact.png") });
 
-  // Footer & Wordmark
+  // Footer & Giant Wordmark
   console.log("Capturing Desktop Footer...");
   await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
   await new Promise((r) => setTimeout(r, 600));
   await page.screenshot({ path: path.join(screenshotsDir, "desktop_footer.png") });
 
+  // Test Terminal & Flag Verification
+  console.log("Testing Terminal & Submitting Garuda CTF Flag...");
+  await page.keyboard.press("`");
+  await new Promise((r) => setTimeout(r, 400));
+  await page.keyboard.type("submit Garuda{cyb3r_v1s10n_unl0ck3d}");
+  await page.keyboard.press("Enter");
+  await new Promise((r) => setTimeout(r, 700));
+  await page.screenshot({ path: path.join(screenshotsDir, "terminal_flag_verified.png") });
+  await page.keyboard.press("Escape");
+  await new Promise((r) => setTimeout(r, 300));
+
   // 2. Mobile 375x812 (iPhone screen)
   console.log("Setting Mobile Viewport 375x812...");
   await page.setViewport({ width: 375, height: 812, deviceScaleFactor: 2, isMobile: true, hasTouch: true });
-  await page.goto("http://localhost:3000", { waitUntil: "networkidle0" });
+  await page.goto("http://localhost:3030", { waitUntil: "networkidle0" });
   await new Promise((r) => setTimeout(r, 1000));
 
   console.log("Capturing Mobile Hero...");
@@ -107,6 +129,30 @@ async function run() {
 
   await browser.close();
   console.log("All screenshots successfully captured!");
+
+  // Copy screenshots to artifact directory
+  const files = [
+    "desktop_hero.png",
+    "desktop_manifesto.png",
+    "desktop_tracks.png",
+    "desktop_sponsors.png",
+    "desktop_prizes.png",
+    "desktop_contact.png",
+    "desktop_footer.png",
+    "terminal_flag_verified.png",
+    "mobile_hero.png",
+    "mobile_tracks.png",
+    "mobile_contact.png",
+  ];
+
+  for (const f of files) {
+    const src = path.join(screenshotsDir, f);
+    const dest = path.join(artifactDir, f);
+    if (fs.existsSync(src)) {
+      fs.copyFileSync(src, dest);
+    }
+  }
+  console.log("Screenshots mirrored to artifact directory.");
 }
 
 run().catch((err) => {

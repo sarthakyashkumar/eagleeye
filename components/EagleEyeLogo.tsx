@@ -4,13 +4,13 @@ import React, { useRef, useState, useEffect } from "react";
 import { useEasterEggs } from "@/context/EasterEggContext";
 import { playCyberTone } from "@/lib/utils";
 
-interface EagleEyeLogoProps {
+interface GarudaLogoProps {
   className?: string;
   size?: number;
   showText?: boolean;
 }
 
-export function EagleEyeLogo({ className = "", size = 36, showText = true }: EagleEyeLogoProps) {
+export function GarudaLogo({ className = "", size = 36, showText = true }: GarudaLogoProps) {
   const { setHackerMode, isHackerMode, unlockEgg, triggerScanWave } = useEasterEggs();
   const [pupilPos, setPupilPos] = useState({ x: 0, y: 0 });
   const [clickCount, setClickCount] = useState(0);
@@ -76,10 +76,10 @@ export function EagleEyeLogo({ className = "", size = 36, showText = true }: Eag
       onClick={handleLogoClick}
       onDoubleClick={handleDoubleClick}
       className={`group inline-flex items-center gap-2.5 cursor-pointer select-none transition-transform duration-300 hover:scale-105 ${className}`}
-      title="EagleEye: Double-click to pulse scan | 5x click to hack"
+      title="Garuda: Double-click to pulse scan | 5x click to hack"
     >
       <div
-        className="relative flex items-center justify-center rounded-xl bg-orange-950/30 p-1.5 border border-orange-500/30 shadow-[0_0_15px_rgba(249,115,22,0.2)] group-hover:border-orange-400 group-hover:shadow-[0_0_22px_rgba(249,115,22,0.4)] transition-all duration-300"
+        className="relative flex items-center justify-center rounded-xl bg-orange-950/40 p-1.5 border border-orange-500/30 shadow-[0_0_15px_rgba(249,115,22,0.2)] group-hover:border-orange-400 group-hover:shadow-[0_0_24px_rgba(249,115,22,0.45)] transition-all duration-300"
         style={{ width: size, height: size }}
       >
         <svg
@@ -88,7 +88,7 @@ export function EagleEyeLogo({ className = "", size = 36, showText = true }: Eag
           xmlns="http://www.w3.org/2000/svg"
           className="w-full h-full text-orange-400 drop-shadow-[0_0_8px_rgba(249,115,22,0.6)]"
         >
-          {/* Eagle Beak & Crest Silhouette */}
+          {/* Garuda / Mythological Eagle Beak & Wing Silhouette */}
           <path
             d="M 6 24 C 14 10, 34 10, 42 24 C 34 38, 14 38, 6 24 Z"
             stroke="currentColor"
@@ -97,13 +97,13 @@ export function EagleEyeLogo({ className = "", size = 36, showText = true }: Eag
             strokeLinejoin="round"
             className="transition-colors group-hover:stroke-orange-300"
           />
-          {/* Eagle brow / geometric crest */}
+          {/* Eagle brow / sharp geometric crest */}
           <path
             d="M 10 17 L 24 8 L 38 17"
             stroke="currentColor"
             strokeWidth="1.8"
             strokeLinecap="round"
-            className="opacity-70 group-hover:opacity-100 transition-opacity"
+            className="opacity-75 group-hover:opacity-100 transition-opacity"
           />
           {/* Cyber reticle ticks */}
           <line x1="24" y1="12" x2="24" y2="15" stroke="currentColor" strokeWidth="1.5" />
@@ -146,8 +146,8 @@ export function EagleEyeLogo({ className = "", size = 36, showText = true }: Eag
       {showText && (
         <div className="flex flex-col leading-none">
           <div className="flex items-center gap-1.5">
-            <span className="text-base sm:text-lg font-bold tracking-wider text-slate-100 uppercase group-hover:text-orange-300 transition-colors">
-              The <span className="text-orange-400">Eagle</span>Eye
+            <span className="text-base sm:text-lg font-extrabold tracking-wider text-slate-100 uppercase group-hover:text-orange-300 transition-colors">
+              GARUDA<span className="text-orange-400">.CTF</span>
             </span>
           </div>
           <span className="text-[9px] uppercase tracking-widest text-slate-400 font-mono mt-0.5">
@@ -158,3 +158,6 @@ export function EagleEyeLogo({ className = "", size = 36, showText = true }: Eag
     </div>
   );
 }
+
+// Backward compatibility alias
+export const EagleEyeLogo = GarudaLogo;
