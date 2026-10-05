@@ -124,10 +124,10 @@ export function Footer() {
         <div className="py-12 sm:py-16 text-center overflow-hidden">
           <h2
             onClick={handlePromptClick}
-            className="text-6xl sm:text-8xl md:text-9xl lg:text-[14rem] font-black tracking-tighter uppercase transition-all duration-500 cursor-pointer select-none text-transparent stroke-text hover:text-orange-400 hover:drop-shadow-[0_0_60px_rgba(249,115,22,0.5)]"
+            className="text-5xl sm:text-7xl md:text-8xl lg:text-[11rem] font-black tracking-tighter uppercase transition-all duration-500 cursor-pointer select-none text-transparent stroke-text hover:text-orange-400 hover:drop-shadow-[0_0_60px_rgba(249,115,22,0.5)] leading-none"
             title="Click to spawn command prompt"
           >
-            GARUDA
+            GARUDA CTF
           </h2>
         </div>
 

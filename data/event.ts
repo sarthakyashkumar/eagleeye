@@ -9,7 +9,7 @@
 export const EVENT_DATE = "2026-11-18T00:00:00+05:30";
 
 export const EVENT_DETAILS = {
-  name: "Garuda",
+  name: "Garuda CTF",
   tagline: "Hack. Decode. Capture.",
   host: "Indian Institute of Information Technology Ranchi (IIIT Ranchi)",
   hostShort: "IIIT Ranchi",

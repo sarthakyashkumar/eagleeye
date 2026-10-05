@@ -48,13 +48,13 @@ export function Hero() {
 
         {/* Main Headline with Text Scramble */}
         <div className="relative my-2">
-          <h1 className="text-6xl sm:text-8xl md:text-9xl lg:text-[10rem] font-black tracking-tight uppercase text-transparent bg-clip-text bg-gradient-to-b from-white via-slate-100 to-slate-400 drop-shadow-[0_0_40px_rgba(249,115,22,0.35)]">
+          <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-[8.5rem] font-black tracking-tight uppercase text-transparent bg-clip-text bg-gradient-to-b from-white via-slate-100 to-slate-400 drop-shadow-[0_0_40px_rgba(249,115,22,0.35)] leading-none">
             <DecryptText text={EVENT_DETAILS.name} speed={40} delay={200} />
           </h1>
 
           {/* Glitch chromatic overlay clone on hover */}
           <div className="absolute inset-0 pointer-events-none select-none opacity-0 hover:opacity-100 transition-opacity">
-            <span className="text-6xl sm:text-8xl md:text-9xl lg:text-[10rem] font-black tracking-tight uppercase text-orange-500/20 blur-[1px]">
+            <span className="text-5xl sm:text-7xl md:text-8xl lg:text-[8.5rem] font-black tracking-tight uppercase text-orange-500/20 blur-[1px] leading-none">
               {EVENT_DETAILS.name}
             </span>
           </div>

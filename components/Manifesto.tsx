@@ -33,7 +33,7 @@ export function Manifesto() {
   });
 
   const manifestoText =
-    "We believe true cybersecurity isn't forged in sterile textbooks or compliance checklists—it is born in the heat of battle. Hosted by IIIT Ranchi, Garuda summons student hackers, security researchers, and binary detectives from across the nation to test their vision against complex real-world threat vectors. Like the mythical bird that pierces every illusion and commands the skies, you will dissect web architectures, reverse-engineer obfuscated binaries, unravel memory traces, and shatter cryptographic primitives. No artificial boundaries. Just pure offensive curiosity, resilient tradecraft, and the relentless pursuit of the root shell.";
+    "We believe true cybersecurity isn't forged in sterile textbooks or compliance checklists—it is born in the heat of battle. Hosted by IIIT Ranchi, Garuda CTF summons student hackers, security researchers, and binary detectives from across the nation to test their vision against complex real-world threat vectors. Like the mythical bird that pierces every illusion and commands the skies, you will dissect web architectures, reverse-engineer obfuscated binaries, unravel memory traces, and shatter cryptographic primitives. No artificial boundaries. Just pure offensive curiosity, resilient tradecraft, and the relentless pursuit of the root shell.";
 
   const words = manifestoText.split(" ");
 
@@ -82,7 +82,7 @@ export function Manifesto() {
         </div>
 
         <h2 className="text-2xl sm:text-4xl font-mono font-bold text-slate-100 uppercase tracking-tight mb-8">
-          <DecryptText text="The Garuda Protocol" />
+          <DecryptText text="The Garuda CTF Protocol" />
         </h2>
 
         {/* Scroll-Reveal Words Manifesto Paragraph */}
